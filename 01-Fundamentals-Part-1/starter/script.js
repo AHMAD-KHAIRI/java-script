@@ -80,7 +80,7 @@ console.log(typeof year);
 
 //null is stated as 'object" data type but it is actually not. this is a bug
 console.log(typeof null);
-*/
+
 
 //13. let, const and var
 
@@ -101,3 +101,86 @@ job = "manager";
 //never write a variable name without declaring it either as let, const or var
 lastName = "hamzah";
 console.log(lastName);
+
+
+//14. Basic Operators
+
+// math operators
+// - is subtraction operator
+const now = 2021;
+const ageKhairi = now - 1985;
+const ageIman = now - 2017;
+
+//we can display 2 variables by using , (comma)
+console.log(ageKhairi, ageIman);
+
+//we can also combine strings and variables
+console.log("I am", ageKhairi, "years old.");
+console.log("Iman is", ageIman, "years old.");
+
+//we can do multiple math calculations in a single console
+console.log(ageIman * 2, ageKhairi / 10);
+// * is a multiplication operator
+// / is a division operator
+
+//2 ** 3 means 2 to the power of 3 = 2 * 2 * 2
+console.log(2 ** 3);
+// ** is an exponentiation operator
+
+//we can use + as an addition operator or combine 2 strings (string concatenation)
+const firstName = "Ahmad Khairi";
+const lastName = "Hamzah";
+console.log(firstName + " " + lastName);
+//to add a space in between the firstName and lastName, we add a string in the middle with an empty space
+
+//next is assignment operators such as =, +=, *=
+let x = 10 + 5; //15
+console.log(x);
+
+x += 10; // x = x + 10 = 15 + 10 = 25
+console.log(x);
+
+x *= 4; // x = x * 4 = 25 * 4 = 100
+console.log(x);
+
+x /= 2; // x = x / 2 = 100 / 2 = 50
+console.log(x);
+
+x++; // x = x + 1 = 50 + 1 = 51
+console.log(x);
+
+//next is comparison operators such as >, >=, <, <=, == (used to produce boolean values)
+console.log(ageIman < ageKhairi); // true
+console.log(1 == 2); // false
+console.log(now - 1985 > now - 2017);
+*/
+
+// 15. Operator Precedence
+const now = 2021;
+const ageKhairi = now - 1985;
+const ageIman = now - 2017;
+
+console.log(now - 1985 > now - 2017);
+//subtraction operator precendence is higher than comparison operator
+// so the subtraction operator will be executed first
+// now - 1985 and now - 2017 --> 36 and 4
+// next comparison operator will be executed
+// is 36 > 4 ? --> result is true
+
+// console.log(20 - 10 - 5); // subtraction is calculated/executed from left to right
+
+let x, y;
+x = y = 20 - 10 - 5;
+console.log(x, y);
+// by order of precedence, subtraction operator will be executed first from left-to-right --> 20 - 10 - 5 = 5
+// next the assignment operator will be executed because of lower precedence from right-to-left --> y = 5 and x = 5
+
+// const averageAge = ageKhairi + ageIman / 2;
+// console.log(ageKhairi, ageIman, averageAge);
+// the result for averageAge is incorrect because the division operator has higher precedence than the addition operator,
+// so ageIman / 2 will be executed first --> 4 / 2 = 2
+// next the addition operator will be executed --> 36 + 2 = 38
+// the solution is to use () or known as the grouping operator as below:
+const averageAge = (ageKhairi + ageIman) / 2;
+// (36 + 4)/ 2 = 20
+console.log(ageKhairi, ageIman, averageAge);
