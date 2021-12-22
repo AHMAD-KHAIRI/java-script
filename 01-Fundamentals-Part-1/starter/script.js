@@ -214,7 +214,7 @@ const johnBMI = johnWeight / (johnHeight * johnHeight);
 const markHigherBMI = markBMI > johnBMI;
 
 console.log(markBMI, johnBMI, markHigherBMI);
-*/
+
 
 // 17. Strings and Template Literals
 const firstName = 'Ahmad Khairi';
@@ -242,3 +242,28 @@ console.log(`ES6 uses backticks
 to write multi-line strings
 like in this example
 here.`);
+*/
+
+// 18. Taking decisions using if / else statements
+
+const age = 18;
+const yearsLeft = 18 - age;
+
+if (age >= 18) {
+    console.log('You can get your driving license!');
+} else {
+    console.log(`You are too young to drive! Wait another ${yearsLeft} years.`)
+}
+
+const birthYear = 1985;
+let century;
+
+if (birthYear <= 2000) {
+    century = 20;
+    console.log(`You are born in the ${century}th century`);
+} else {
+    century = 21;
+    console.log(`You are born in the ${century}st century`);
+}
+
+
