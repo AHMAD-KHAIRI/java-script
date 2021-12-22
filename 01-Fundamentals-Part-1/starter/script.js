@@ -279,3 +279,35 @@ if (birthYear <= 2000) {
 // Hint: Use an if/else statement 😉
 // GOOD LUCK 😀
 
+// Test Data 1
+const markWeight = 78;
+const markHeight = 1.69;
+const johnWeight = 92;
+const johnHeight = 1.95;
+
+// Test Data 2
+// const markWeight = 95;
+// const markHeight = 1.88;
+// const johnWeight = 85;
+// const johnHeight = 1.76;
+
+const markBMI = markWeight / markHeight ** 2;
+const johnBMI = johnWeight / (johnHeight * johnHeight);
+const markHigherBMI = markBMI > johnBMI;
+const johnHigherBMI = johnBMI > markBMI;
+
+console.log(markBMI, johnBMI, markHigherBMI, johnHigherBMI);
+
+// we could do like this: the most common way
+// if (markBMI > johnBMI) {
+//     console.log(`Mark's BMI (${markBMI}) is higher than John's (${johnBMI})!`);
+// } else {
+//     console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`);
+// }
+
+//or we could do it like this:
+if (markHigherBMI == true) {
+    console.log(`Mark's BMI (${markBMI}) is higher than John's (${johnBMI})!`);
+} else {
+    console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`);
+}
