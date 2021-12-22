@@ -184,7 +184,7 @@ console.log(x, y);
 const averageAge = (ageKhairi + ageIman) / 2;
 // (36 + 4)/ 2 = 20
 console.log(ageKhairi, ageIman, averageAge);
-*/
+
 
 // Coding Challenge #1
 // Mark and John are trying to compare their BMI(Body Mass Index), which is calculated using the formula:
@@ -214,3 +214,14 @@ const johnBMI = johnWeight / (johnHeight * johnHeight);
 const markHigherBMI = markBMI > johnBMI;
 
 console.log(markBMI, johnBMI, markHigherBMI);
+*/
+
+// 17. Strings and Template Literals
+const firstName = 'Ahmad Khairi';
+const job = 'engineer';
+const birthYear = 1985;
+const year = 2022;
+
+const aboutMe = "Hello! I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
+
+console.log(aboutMe);
