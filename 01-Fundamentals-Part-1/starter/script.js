@@ -222,6 +222,23 @@ const job = 'engineer';
 const birthYear = 1985;
 const year = 2022;
 
+// writing strings using single or double quotes and concatenate multiple strings together using +
 const aboutMe = "Hello! I'm " + firstName + ', a ' + (year - birthYear) + ' years old ' + job + '!';
-
 console.log(aboutMe);
+
+// How to write template literals to simplify strings concatenation
+const aboutMeNew = `Hello! I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
+// use backticks `` on top of tab key to define template literals
+// use syntax ${variable} to insert variable
+console.log(aboutMeNew);
+
+// How to write multi-line strings before ES6
+console.log('Before ES6, "backslash n backslash" is used to write multi-line strings \n\
+like in this example \n\
+here.');
+
+// How to write multi-line strings in ES6 using backticks aka template literals
+console.log(`ES6 uses backticks
+to write multi-line strings
+like in this example
+here.`);
