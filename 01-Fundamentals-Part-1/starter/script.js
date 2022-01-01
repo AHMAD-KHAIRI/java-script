@@ -265,7 +265,7 @@ if (birthYear <= 2000) {
     century = 21;
     console.log(`You are born in the ${century}st century`);
 }
-*/
+
 
 // Coding Challenge #2
 // Use the BMI example from Challenge #1, and the code you already wrote, and improve it.
@@ -311,3 +311,12 @@ if (markHigherBMI == true) {
 } else {
     console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`);
 }
+*/
+
+// 19. Type conversion and coersion
+// Conversion - manually convert one data type to another
+// Coersion - JS automatically converts data type
+// Example below:
+const inputYear = '1991';
+console.log(inputYear + 18);
+console.log(Number(inputYear) + 18);
