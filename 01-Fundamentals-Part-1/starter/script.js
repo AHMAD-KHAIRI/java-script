@@ -316,7 +316,18 @@ if (markHigherBMI == true) {
 // 19. Type conversion and coersion
 // Conversion - manually convert one data type to another
 // Coersion - JS automatically converts data type
-// Example below:
+
+// Type conversion:
+// 1st example: conversion to numbers data type using Number() function
 const inputYear = '1991';
 console.log(inputYear + 18);
 console.log(Number(inputYear) + 18);
+console.log(typeof inputYear);  // checks the type of date for inputYear variable
+
+// A string in the form of text such as names cannot be converted to numbers such as below:
+console.log(Number('Khairi')); // outputs NaN in the browser console which stands for Not a Number
+console.log(typeof NaN);    // checks the type of data for NaN
+
+// 2nd example: conversion to string data type using String() function
+const newYear = 2022;
+console.log(String(2022), 2022);    // notice in browser console that string value is written in white text while number is in purple
