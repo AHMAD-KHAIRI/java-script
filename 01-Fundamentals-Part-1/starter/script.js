@@ -331,3 +331,39 @@ console.log(typeof NaN);    // checks the type of data for NaN
 // 2nd example: conversion to string data type using String() function
 const newYear = 2022;
 console.log(String(2022), 2022);    // notice in browser console that string value is written in white text while number is in purple
+
+
+// Type coercion: JS automatically converts values from one data type to another
+
+// 1st example: plus "+" operator triggers a type coercion --> a number value will be converted to a string 
+// hence 36 is first converted to a string '36' and all 3 strings will be concatenated
+console.log('I am ' + 36 + ' years old.'); // outputs string: I am 36 years old.
+
+// 2nd example: minus "-" operator triggers a type coercion --> a string value will be converted to a number
+// hence '20' and '10' are first converted to numbers
+console.log('20' - '10' - 5); // outputs number: 5
+
+// 3rd example: "*" or "/" operator triggers a type coercion --> a string will be converted to a number
+console.log('5' * '6'); // outputs number: 30
+console.log('10' / '2'); // outputs number: 5
+
+// 4th example: combination of different operators and data types
+console.log('10' + 1 - 5);
+// the number 1 is first converted from number to string and the result is '10' + '1' = '101'
+// '101' is then converted from string to the number 101 and minus the number 5 which equals to the number 96
+
+// Quiz
+let n = '1' + 1; // the number 1 is first converted to a string and two strings is then concatenated to get '11'
+n = n - 1; // the string '11' is first converted to number 11 and minus 1 to get the result of the number 10
+console.log(n);
+
+console.log(2 + 3 + 4 + '5');
+// the numbers 2, 3 and 4 will be added to get the number 9,
+// then it is converted to a string '9'
+// lastly strings '9' and '5' is concatenated to get the string '95'
+
+console.log('10' - '4' - '3' - 2 + '5');
+// the strings '10', '4' and '3' is first converted to numbers
+// 10 - 4 - 3 - 2 is calculated to get the number 1
+// the number 1 is then converted to a string '1'
+// strings '1' and '5' is then concatenated to get the string '15'
