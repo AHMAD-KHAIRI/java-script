@@ -370,3 +370,35 @@ console.log('10' - '4' - '3' - 2 + '5');
 */
 
 // 21. Truthy and Falsy values
+
+// Falsy values are values that are not exactly false but will become false when we try to convert them into a boolean.
+//There are 5 falsy vaLues: 0, '', undefined, null, NaN
+// Everything else are truthy false e.g. any number that is not 0, any string that is not an empty string will be converted to true when we try to convert them into a boolean
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Khairi'));
+console.log(Boolean({})); // where {} is for empty object
+console.log(Boolean(''));
+
+// A conversion to Boolean is always implicit, not explicit or in other words always type coercion
+
+// Example of type coercion in if else condition
+const money = 10;
+if (money) {
+    console.log("Don't spend it all!");
+} else {
+    console.log('You should get a job!');
+}
+// Output: The condition in else is executed because the variable money is assigned with 0 which is a falsy value.
+// When money is assigned with the value 10, the condition becomes truthy so the if condition is executed.
+
+// Another example is to test if a variable is defined with a value or undefined
+let height = 1;
+if (height) {
+    console.log(`Height is ${height}`);
+} else {
+    console.log("Height is UNDEFINED!");
+}
+// Output: The condition in else is executed when height is either undefined or 0 which are falsy values.
+// When height is assigned with a value 1, the condition becomes truthy so the if condition is executed.
