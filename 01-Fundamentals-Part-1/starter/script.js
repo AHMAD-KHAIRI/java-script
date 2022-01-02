@@ -267,7 +267,7 @@ if (birthYear <= 2000) {
 }
 
 
-// Coding Challenge #2
+// 19. Coding Challenge #2
 // Use the BMI example from Challenge #1, and the code you already wrote, and improve it.
 // Your tasks:
 // 1. Print a nice output to the console, saying who has the higher BMI.The message
@@ -311,9 +311,9 @@ if (markHigherBMI == true) {
 } else {
     console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`);
 }
-*/
 
-// 19. Type conversion and coersion
+
+// 20. Type conversion and coersion
 // Conversion - manually convert one data type to another
 // Coersion - JS automatically converts data type
 
@@ -335,7 +335,7 @@ console.log(String(2022), 2022);    // notice in browser console that string val
 
 // Type coercion: JS automatically converts values from one data type to another
 
-// 1st example: plus "+" operator triggers a type coercion --> a number value will be converted to a string 
+// 1st example: plus "+" operator triggers a type coercion --> a number value will be converted to a string
 // hence 36 is first converted to a string '36' and all 3 strings will be concatenated
 console.log('I am ' + 36 + ' years old.'); // outputs string: I am 36 years old.
 
@@ -367,3 +367,6 @@ console.log('10' - '4' - '3' - 2 + '5');
 // 10 - 4 - 3 - 2 is calculated to get the number 1
 // the number 1 is then converted to a string '1'
 // strings '1' and '5' is then concatenated to get the string '15'
+*/
+
+// 21. Truthy and Falsy values
