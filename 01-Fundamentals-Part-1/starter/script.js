@@ -367,7 +367,7 @@ console.log('10' - '4' - '3' - 2 + '5');
 // 10 - 4 - 3 - 2 is calculated to get the number 1
 // the number 1 is then converted to a string '1'
 // strings '1' and '5' is then concatenated to get the string '15'
-*/
+
 
 // 21. Truthy and Falsy values
 
@@ -402,3 +402,15 @@ if (height) {
 }
 // Output: The condition in else is executed when height is either undefined or 0 which are falsy values.
 // When height is assigned with a value 1, the condition becomes truthy so the if condition is executed.
+*/
+
+// 22. Equality operators
+
+// A single equal sign (=) is an assignment operator e.g. assigning a value to a variable  --> age = 18
+const age = 18;
+
+// A double equal sign (==) is an equality operator that returns a Boolean result and also does type coercion e.g. '18' == 18 outputs true condition
+if (age == '18') console.log(`You are ${age} years old.`)
+
+// A triple equal sign (===) is a  strict equality operator that returns a Boolean result e.g. 18 === 18 returns a true output but 19 === 18 returns a false output
+if (age === 18) console.log(`You are an adult.`);
