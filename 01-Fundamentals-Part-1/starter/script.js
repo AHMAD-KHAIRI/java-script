@@ -409,8 +409,39 @@ if (height) {
 // A single equal sign (=) is an assignment operator e.g. assigning a value to a variable  --> age = 18
 const age = 18;
 
-// A double equal sign (==) is an equality operator that returns a Boolean result and also does type coercion e.g. '18' == 18 outputs true condition
+// A double equal sign (==) is a loose equality operator that returns a Boolean result and also does type coercion e.g. '18' == 18 outputs true condition
+// Avoid to use loose equality operator as much as possible to avoid unknown bugs
 if (age == '18') console.log(`You are ${age} years old.`)
 
 // A triple equal sign (===) is a  strict equality operator that returns a Boolean result e.g. 18 === 18 returns a true output but 19 === 18 returns a false output
 if (age === 18) console.log(`You are an adult.`);
+
+// Example: Ask user to enter a number using the function: prompt(), save it in a variable and display in the console
+const favoriteNumber = Number(prompt("What is your favorite number?")); // Function Number() is used to convert string to number data type
+console.log(favoriteNumber);
+
+// Check the type of data
+console.log(typeof favoriteNumber); // returns a string data type even when a number is entered
+
+// Do a loose equality check
+if (favoriteNumber == 1) { // '1' is equal to 1 because of type coercion so the condition is true
+    console.log("That is my favorite number too!");
+}
+
+// Do a strict equality check
+if (favoriteNumber === 1) { // '1' is not equal to 1 so the condition is false
+    console.log("Awesome!")
+}
+// using else if
+else if (favoriteNumber === 2) {
+    console.log("That's good!")
+} else {
+    console.log("Whatever floats your boat!")
+}
+
+// using strict non-equality operator !==
+if (favoriteNumber !== 1) {
+    console.log("Ok we get it. You don't like being number 1 :)")
+}
+
+
