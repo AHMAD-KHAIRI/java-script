@@ -402,7 +402,7 @@ if (height) {
 }
 // Output: The condition in else is executed when height is either undefined or 0 which are falsy values.
 // When height is assigned with a value 1, the condition becomes truthy so the if condition is executed.
-*/
+
 
 // 22. Equality operators
 
@@ -443,5 +443,7 @@ else if (favoriteNumber === 2) {
 if (favoriteNumber !== 1) {
     console.log("Ok we get it. You don't like being number 1 :)")
 }
+*/
 
+// 23. Boolean logic
 
