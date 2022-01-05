@@ -445,5 +445,37 @@ if (favoriteNumber !== 1) {
 }
 */
 
-// 23. Boolean logic
+// 23 & 24. Boolean logic
 
+// Basic boolean logic: AND, OR & NOT operators
+// AND --> && e.g. A AND B
+// OR e.g. A OR B
+// ! (NOT) e.g. !A AND B / A OR !B
+
+//const age = 16;
+// A Age is greater or equal to 20
+// B: Age is 
+
+const hasDriversLicense = true; // variable A
+const hasGoodVision = true; // variable B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+
+// if (shouldDrive) {
+//     console.log("Iman is able to drive!");
+// } else {
+//     console.log("Someone else should drive...");
+// }
+
+const isTired = false; // variable C
+console.log(hasDriversLicense || hasGoodVision || isTired);
+
+if (hasDriversLicense && hasGoodVision && !isTired) {
+    console.log("Iman is able to drive!");
+} else {
+    console.log("Someone else should drive...");
+}
