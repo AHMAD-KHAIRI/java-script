@@ -594,7 +594,7 @@ if (day === 'monday') {
 } else {
     console.log('Not a valid day!');
 }
-*/
+
 
 // 27. Statements and Expressions
 
@@ -612,3 +612,29 @@ if (23 > 10) {
 
 const me = 'Khairi';
 console.log(`${me} is ${2022 - 1985} years old`); // this line is a statement
+*/
+
+// 28. The Conditional (Ternary) operator
+
+// Allows us to write something similar to if else statement but in one line
+
+// syntax: condition ? exprIfTrue : exprIfFalse
+
+const age = 18;
+
+age >= 18 ? console.log('I am allowed to take a driving license!') : console.log(`You are not allowed to drive!`);
+
+// in comparison to an if else statement, the conditional operator is much more compact
+
+if (age >= 18) {
+    console.log('I am allowed to take a driving license!');
+} else {
+    console.log(`You are not allowed to drive!`);
+}
+
+const drink = (age >= 18) ? 'wine' : 'water';
+console.log(drink);
+
+// ternary operator is an expression which produces a value thus we are able to do this:
+console.log(`I am legal to drink ${age >= 18 ? 'wine' : 'water'}`);
+
