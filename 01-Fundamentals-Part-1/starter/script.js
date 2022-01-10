@@ -574,7 +574,7 @@ switch (day) {
     default:
         console.log('Not a valid day!');
 }
-*/
+
 // Exercise: translate the above to if else statements
 
 // Hint: use logical operator to translate the case of 'wednesday' and 'thursday' case
@@ -594,3 +594,21 @@ if (day === 'monday') {
 } else {
     console.log('Not a valid day!');
 }
+*/
+
+// 27. Statements and Expressions
+
+// Expression is a piece of code that expresses value e.g. 3 + 4, 1991, true && false && !false (boolean value)
+
+3 + 4;
+1991;
+true && false && !false;
+
+// Statements are executed but does not produce a value by itself e.g. if else, switch case
+
+if (23 > 10) {
+    const str = console.log('23 is bigger');
+}
+
+const me = 'Khairi';
+console.log(`${me} is ${2022 - 1985} years old`); // this line is a statement
