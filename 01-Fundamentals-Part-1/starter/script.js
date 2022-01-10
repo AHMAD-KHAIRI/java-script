@@ -479,7 +479,7 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 } else {
     console.log("Someone else should drive...");
 }
-*/
+
 
 // 25. Coding Challenge #3
 
@@ -546,4 +546,10 @@ if (averageScoreDolphins > averageScoreKoalas && averageScoreDolphins >= 100) {
 } else {
     console.log("No team wins the trophy!");
 }
+*/
+
+// 26. The switch statement
+
+const day = 'monday';
+
 
