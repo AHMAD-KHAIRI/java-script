@@ -479,7 +479,7 @@ if (hasDriversLicense && hasGoodVision && !isTired) {
 } else {
     console.log("Someone else should drive...");
 }
-*/
+
 
 // 25. Coding Challenge #3
 
@@ -547,3 +547,118 @@ if (averageScoreDolphins > averageScoreKoalas && averageScoreDolphins >= 100) {
     console.log("No team wins the trophy!");
 }
 
+
+// 26. The switch statement
+
+const day = 'monday';
+
+switch (day) {
+    case 'monday': // day === 'monday' (switch does a strict equality comparison)
+        console.log('Plan course structure');
+        console.log('Go to coding meetup');
+        break;
+    case 'tuesday':
+        console.log('Prepare theory videos');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Write code examples');
+        break;
+    case 'friday':
+        console.log('Record videos');
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log('Enjoy the weekend :D');
+        break;
+    default:
+        console.log('Not a valid day!');
+}
+
+// Exercise: translate the above to if else statements
+
+// Hint: use logical operator to translate the case of 'wednesday' and 'thursday' case
+const day = 'monday';
+
+if (day === 'monday') {
+    console.log('Plan course structure');
+    console.log('Go to coding meetup');
+} else if (day === 'tuesday') {
+    console.log('Prepare theory videos');
+} else if (day === 'wednesday' || day === 'thursday') {
+    console.log('Write code examples');
+} else if (day === 'friday') {
+    console.log('Record videos');
+} else if (day === 'saturday' || day === 'sunday') {
+    console.log('Enjoy the weekend :D');
+} else {
+    console.log('Not a valid day!');
+}
+
+
+// 27. Statements and Expressions
+
+// Expression is a piece of code that expresses value e.g. 3 + 4, 1991, true && false && !false (boolean value)
+
+3 + 4;
+1991;
+true && false && !false;
+
+// Statements are executed but does not produce a value by itself e.g. if else, switch case
+
+if (23 > 10) {
+    const str = console.log('23 is bigger');
+}
+
+const me = 'Khairi';
+console.log(`${me} is ${2022 - 1985} years old`); // this line is a statement
+
+
+// 28. The Conditional (Ternary) operator
+
+// Allows us to write something similar to if else statement but in one line
+
+// syntax: condition ? exprIfTrue : exprIfFalse
+
+const age = 18;
+
+age >= 18 ? console.log('I am allowed to take a driving license!') : console.log(`You are not allowed to drive!`);
+
+// in comparison to an if else statement, the conditional operator is much more compact
+
+if (age >= 18) {
+    console.log('I am allowed to take a driving license!');
+} else {
+    console.log(`You are not allowed to drive!`);
+}
+
+const drink = (age >= 18) ? 'wine' : 'water';
+console.log(drink);
+
+// ternary operator is an expression which produces a value thus we are able to do this:
+console.log(`I am legal to drink ${age >= 18 ? 'wine' : 'water'}`);
+*/
+
+// 29. Coding challenge #4
+
+// Steven wants to build a very simple tip calculator for whenever he goes eating in a restaurant. 
+// In his country, it's usual to tip 15% if the bill value is between 50 and 300. 
+// If the value is different, the tip is 20 %.
+// Your tasks:
+// 1. Calculate the tip, depending on the bill value.Create a variable called 'tip' for this. 
+// It's not allowed to use an if/else statement 😅 (If it's easier for you, you can start with an if/else statement, and then try to convert it to a ternary operator!)
+// 2. Print a string to the console containing the bill value, the tip, and the final value (bill + tip).
+// Example: “The bill was 275, the tip was 41.25, and the total value 316.25”
+// Test data:
+// Data 1: Test for bill values 275, 40 and 430
+
+// const bill = 275;
+// let tip;
+
+// (bill >= 50) && (bill <= 300) ? console.log(`The bill was ${bill}, the tip was ${tip = 0.15 * bill}, and the total value ${bill + tip}`) : console.log(`The bill was ${bill}, the tip was ${tip = 0.2 * bill}, and the total value ${bill + tip}`);
+
+// alternative solution from udemy
+
+const bill = 430;
+const tip = (bill >= 50) && (bill <= 300) ? bill * 0.15 : bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
