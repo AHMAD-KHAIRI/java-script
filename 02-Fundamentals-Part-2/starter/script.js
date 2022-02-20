@@ -1,3 +1,4 @@
+/*
 // 20 Feb 2022
 // activate strict mode to make code secure
 'use strict';
@@ -16,3 +17,14 @@ if (hasDriversLicense) console.log('I can drive :D');
 // strict mode also reserves strict words for future feature such as below
 const interface = 'Audio';
 const private = '1234';
+*/
+
+// JavaScript functions
+
+// a function is a piece of code that we can reuse in the code as many times we want
+function logger() {
+    console.log('My name is AK!');
+}
+
+// calling / running / invoking function
+logger();
