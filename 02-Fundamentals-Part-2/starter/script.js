@@ -45,3 +45,12 @@ function fruitProcessor(apples, oranges) {
 fruitProcessor(5, 0);
 const appleJuice = fruitProcessor(5, 0);
 console.log(appleJuice);
+
+const appleOrangeJuice = fruitProcessor(2, 4);
+console.log(appleOrangeJuice);
+
+// functions allows us to write more maintable code because we can create reusable chuck of code
+// keep your code DRY = Don't Repeat Yourself for a cleaner code
+
+const num = Number('23'); // a Number is also a function that converts a string to a number
+console.log(typeof (num));
