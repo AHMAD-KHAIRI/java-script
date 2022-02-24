@@ -39,7 +39,7 @@ logger();
 // parameters are variables that are specific to the function
 function fruitProcessor(apples, oranges) {
     console.log(apples, oranges);
-    const juice = `Juice with ${apples} apples and 
+    const juice = `Juice with ${apples} apples and
     ${oranges} oranges.`;
     return juice;
 }
@@ -56,7 +56,7 @@ console.log(appleOrangeJuice);
 
 const num = Number('23'); // a Number is also a function that converts a string to a number
 console.log(typeof (num));
-*/
+
 
 // code challenge from codewars: remove vowels from a string
 const myString = "I am Ahmad Khairi";
@@ -70,7 +70,26 @@ function disemvowel(str) {
 const removeVowelsFromMyString = disemvowel("I am Ahmad Khairi");
 console.log(removeVowelsFromMyString);
 // expected "m hmd Khr"
+*/
 
 // 24 Feb 2022 11:26 PM
 // 33. Function Declarations vs Expressions
 
+// Create a function to calculate the age based on the given birth year
+
+// Create a function declaration
+function calcAge1(birthYear) {
+    return 2022 - birthYear;
+}
+
+const age1 = calcAge1(1985);
+console.log(age1);
+
+// Create a function expression
+const calcAge2 = function (birthYear) {
+    return 2022 - birthYear;
+}
+// a function expression stores a function in a variable
+
+const age2 = calcAge2(1985);
+console.log(age2);
