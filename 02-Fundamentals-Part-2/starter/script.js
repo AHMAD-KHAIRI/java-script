@@ -17,7 +17,7 @@ if (hasDriversLicense) console.log('I can drive :D');
 // strict mode also reserves strict words for future feature such as below
 const interface = 'Audio';
 const private = '1234';
-*/
+
 
 // JavaScript functions
 
@@ -54,3 +54,19 @@ console.log(appleOrangeJuice);
 
 const num = Number('23'); // a Number is also a function that converts a string to a number
 console.log(typeof (num));
+*/
+
+// code challenge from codewars: remove vowels from a string
+const myString = "I am Ahmad Khairi";
+console.log(myString);
+
+function disemvowel(str) {
+    str = str.replace(/[aeiou]/ig, '')
+    return str;
+}
+
+const removeVowelsFromMyString = disemvowel("I am Ahmad Khairi");
+console.log(removeVowelsFromMyString);
+// expected "m hmd Khr"
+
+
