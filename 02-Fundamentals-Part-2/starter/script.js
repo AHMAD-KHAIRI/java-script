@@ -70,7 +70,7 @@ function disemvowel(str) {
 const removeVowelsFromMyString = disemvowel("I am Ahmad Khairi");
 console.log(removeVowelsFromMyString);
 // expected "m hmd Khr"
-*/
+
 
 // 24 Feb 2022 11:26 PM
 // 33. Function Declarations vs Expressions
@@ -93,3 +93,29 @@ const calcAge2 = function (birthYear) {
 
 const age2 = calcAge2(1985);
 console.log(age2);
+*/
+
+// 34. Arrow Function '=>'
+// In ES6, Arrow functions '=>' is added as the third type of functions added to Javascript
+// Arrow functions is a special form of function expression that is shorter therefore faster to write
+
+const calcAge3 = birthYear => 2022 - birthYear;
+// In Arrow function =>, we don't need to include {} to define a code block in case of a function with a single parameter like the example above
+// and return happens implicitly without explicitly writing down the return keyword in the function
+
+// call up the arrow function just like a normal function
+const age3 = calcAge3(1985);
+console.log(age3);
+
+// how to write a function with multiple parameters
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = 2022 - birthYear;
+    const retirementAge = 65 - age;
+    // return retirementAge;
+    return `${firstName} will retire in ${retirementAge} years`;
+}
+
+// console.log(yearsUntilRetirement(1985));
+console.log(yearsUntilRetirement(1985, "Ahmad Khairi"));
+console.log(yearsUntilRetirement(2017, "Iman Ezra Khayr"));
+
