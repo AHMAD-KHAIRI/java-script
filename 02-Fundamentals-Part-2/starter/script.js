@@ -1,6 +1,8 @@
 /*
 // 20 Feb 2022
-// activate strict mode to make code more secure
+// Section 3: Java Script Fundamentals - Part 2
+
+// 32. activate strict mode to make code more secure
 'use strict';
 
 // strict mode creates visible errors in the dev console where in other case JS failed silently
@@ -19,7 +21,7 @@ const interface = 'Audio';
 const private = '1234';
 
 
-// JavaScript functions
+// 32. JavaScript functions
 
 // a function is a piece of code that we can reuse in the code as many times we want
 // function <function-name>(<function-parameter>) {<statements>}
@@ -69,4 +71,6 @@ const removeVowelsFromMyString = disemvowel("I am Ahmad Khairi");
 console.log(removeVowelsFromMyString);
 // expected "m hmd Khr"
 
+// 24 Feb 2022 11:26 PM
+// 33. Function Declarations vs Expressions
 
