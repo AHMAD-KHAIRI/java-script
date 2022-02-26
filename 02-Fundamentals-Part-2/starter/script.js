@@ -93,7 +93,7 @@ const calcAge2 = function (birthYear) {
 
 const age2 = calcAge2(1985);
 console.log(age2);
-*/
+
 
 // 34. Arrow Function '=>'
 // In ES6, Arrow functions '=>' is added as the third type of functions added to Javascript
@@ -118,4 +118,29 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 // console.log(yearsUntilRetirement(1985));
 console.log(yearsUntilRetirement(1985, "Ahmad Khairi"));
 console.log(yearsUntilRetirement(2017, "Iman Ezra Khayr"));
+*/
 
+// 26 Feb 2022
+// Learning Arrow Functions from YouTuber Colt Steele
+// Definition: syntactically compact alternative to a regular function expression"
+// Examples:
+// const square = (x) => {
+//     return x * x;
+// }
+
+// const sum = (x, y) => {
+//     return x + y;
+// }
+
+// const divide = (x, y) => {
+//     return x / y;
+// }
+
+// const annoying = () => {
+//     console.log("LOL OMG HEYY!");
+// }
+
+// single expression code can be written like this:
+const square = x => (x * x);
+const sum = (x, y) => (x + y);
+const divide = (x, y) => (x / y);
