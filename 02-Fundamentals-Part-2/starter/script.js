@@ -226,19 +226,60 @@ function fruitProcessor(apples, oranges) {
 
 // let's make another example
 // create a function that tells how many portions of rice and water is needed to cook rice for n number of guest
-//first create a function 'cookRice'
+// first create a function 'cookRice'
 function cookRiceForGuest(guest) { //where the parameter is guest
     //function body
     const cupsOfRice = guest * 1;
     const cupsOfWater = cupsOfRice + 1.5;
 
     const result = console.log(`You need to add ${cupsOfRice} cups of rice 
-and ${cupsOfWater} cups of water in the rice cooker.`);
+    and ${cupsOfWater} cups of water in the rice cooker.`);
+    //     const result = alert(`You need to add ${cupsOfRice} cups of rice 
+    // and ${cupsOfWater} cups of water in the rice cooker.`);
     return result;
-
 }
 
+// call up the function and save the value in a variable
 const cookRice = cookRiceForGuest(prompt('How many people is going to eat rice?'));
+
+// 6 March 2022 @ 5.43 pm
+// Chapter 37. Reviewing Functions
+// There are 3 different function types:
+
+// // 1) below is type: function declaration
+// function calcAge(birthYear) {
+//     return 2022 - birthYear;
+// }
+// function yearsUntilRetirement(birthYear, firstName) {
+//     const age = calcAge(birthYear);
+//     const retirementAge = 65 - age;
+//     // return retirementAge;
+//     return `${firstName} will retire in ${retirementAge} years`;
+// }
+
+// // 2) below is type: function expression
+// const calcAge = function (birthYear) {
+//     return 2022 - birthYear;
+// }
+
+// const yearsUntilRetirement = function (birthYear, firstName) {
+//     const age = calcAge(birthYear);
+//     const retirementAge = 65 - age;
+//     // return retirementAge;
+//     return `${firstName} will retire in ${retirementAge} years`;
+// }
+
+// below is type: arrow function (remember that it is a form of function expression)
+const calcAge = birthYear => 2022 - birthYear;
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = calcAge(birthYear);
+    const retirementAge = 65 - age;
+    // return retirementAge;
+    return `${firstName} will retire in ${retirementAge} years`;
+}
+
+console.log(yearsUntilRetirement(1985, 'Ahmad Khairi'));
 
 
 
