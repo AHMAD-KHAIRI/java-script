@@ -1,9 +1,10 @@
+'use strict';
 /*
 // 20 Feb 2022
 // Section 3: Java Script Fundamentals - Part 2
 
 // 32. activate strict mode to make code more secure
-'use strict';
+
 
 // strict mode creates visible errors in the dev console where in other case JS failed silently
 let hasDriversLicense = false;
@@ -148,3 +149,96 @@ const divide = (x, y) => (x / y);
 
 // 6 March 2022 11.31 AM
 // 36. Functions calling other functions
+
+// function cutFruitPieces(fruit) {
+//     return fruit * 4;
+// }
+
+// function fruitProcessor(apples, oranges) {
+//     const applePieces = cutFruitPieces(apples);
+//     const orangePieces = cutFruitPieces(oranges);
+//     // console.log(apples, oranges);
+//     const juice = `Juice with ${applePieces} pieces of apple and
+//     ${orangePieces} pieces of orange.`;
+//     return juice;
+// }
+
+// console.log(fruitProcessor(2, 3));
+
+// Recap of basic javascript functions
+// How to declare a function:
+// function <functionName>(<parameters separated by commas>) { <function body/return expression }
+function say(message) { // where functionName: say, parameter: message
+    console.log(message); // where function body: console.log(message)
+}
+function add(a, b) { // where functionName: add, parameters: a & b
+    return a + b; // function body/expression: a + b, added 'return' to explicityly return result of a + b
+}
+function square(a) { // where functionName: square, parameter: a
+    return a * a; // function body/expression: a * a, added 'return' to explicitly return value for the function square
+}
+
+// How to call a function:
+// <functionName>(<arguments>);
+say('Hello AK'); // where functionName: say, arguments that corresponds to the function parameter message --> string 'Hello AK'
+
+// Parameters vs Arguments
+// When declaring a function, we specify the parameters
+// When calling a function, we pass the arguments that are corresponding/related to the parameters
+// Every function in JavaScript 'implicitly' returns undefined unless we 'explicitly' specify a 'return' value.
+
+add(2, 2);  // where functionName: add, arguments that corresponds to the function parameters: a = 2, b = 2
+// if without a 'return', output for function add is undefined. This is because we did not explicitly specify 'return' value
+// when we added 'return' in the function body, the output is then the return value from the sum of a + b = 2 + 2 = 4
+
+square(2); // where functionName: square, argument: a = 2
+// expected output without return: undefined
+// expected output with return expression: the return value from the multiplication of a * a = 2 * 2 = 4
+
+// so we return back to the tutorial example of food processor
+// function fruitProcessor(apples, oranges) { // where functionName: fruitProcessor, parameters: apples & oranges
+//     // function body
+//     console.log(apples, oranges);
+//     // return console.log('Juice with ', apples, ' pieces of Apples and ', oranges, 'pieces of Oranges.');
+//     // a preferred way is to save the return expression in a variable like below
+//     const juice = console.log('Juice with ', apples, ' pieces of Apples and ', oranges, 'pieces of Oranges.');
+//     // and include return expression corresponding to the variable
+//     return juice;
+// }
+
+// fruitProcessor(2, 3);
+
+// so if we want to call a function from another function
+// for example we want create a function to calculate how many pieces each fruit need to be cut before putting it in the food processor
+function cutFruitPieces(fruit) { // where functionName: cutFruitPieces, parameter: fruit
+    return fruit * 4; // where the return expression is the return value of the calculation fruit * 4
+}
+
+function fruitProcessor(apples, oranges) {
+    // here we call the function cutFruitPieces from inside the fruitProcessor function and returns the value
+    // and save the value in the variables applePieces and orangePieces
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
+    // then we replace the variables in the return expression below
+    const juice = console.log(`Juice with ${applePieces} pieces of Apple and ${orangePieces} pieces of Orange.`)
+    return juice;
+}
+
+// let's make another example
+// create a function that tells how many portions of rice and water is needed to cook rice for n number of guest
+//first create a function 'cookRice'
+function cookRiceForGuest(guest) { //where the parameter is guest
+    //function body
+    const cupsOfRice = guest * 1;
+    const cupsOfWater = cupsOfRice + 1.5;
+
+    const result = console.log(`You need to add ${cupsOfRice} cups of rice 
+and ${cupsOfWater} cups of water in the rice cooker.`);
+    return result;
+
+}
+
+const cookRice = cookRiceForGuest(prompt('How many people is going to eat rice?'));
+
+
+
