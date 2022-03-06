@@ -118,7 +118,7 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 // console.log(yearsUntilRetirement(1985));
 console.log(yearsUntilRetirement(1985, "Ahmad Khairi"));
 console.log(yearsUntilRetirement(2017, "Iman Ezra Khayr"));
-*/
+
 
 // 26 Feb 2022
 // Learning Arrow Functions from YouTuber Colt Steele
@@ -144,3 +144,7 @@ console.log(yearsUntilRetirement(2017, "Iman Ezra Khayr"));
 const square = x => (x * x);
 const sum = (x, y) => (x + y);
 const divide = (x, y) => (x / y);
+*/
+
+// 6 March 2022 11.31 AM
+// 36. Functions calling other functions
