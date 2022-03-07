@@ -280,7 +280,7 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 }
 
 console.log(yearsUntilRetirement(1985, 'Ahmad Khairi'));
-*/
+
 
 // 7 March 2022 @ 12.36 pm
 // 38. Coding Challenge #1
@@ -441,3 +441,29 @@ switch (time) {
 const age = 18;
 
 age >= 18 ? console.log('Get a job!') : console.log('Study hard!');
+*/
+
+// Exercise: How to create a calculator using JavaScript
+// source: YouTuber Dani Krossing
+
+function calc() {
+    let a = parseInt(document.querySelector("#value1").value);
+    let b = parseInt(document.querySelector("#value2").value);
+    let op = document.querySelector("#operator").value;
+    let calculate;
+
+    if (op == "add") {
+        calculate = a + b;
+    }
+    else if (op == "min") {
+        calculate = a - b;
+    }
+    else if (op == "div") {
+        calculate = a / b;
+    }
+    else if (op == "mul") {
+        calculate = a * b;
+    }
+    // console.log(calculate);
+    document.querySelector("#result").innerHTML = calculate;
+}
