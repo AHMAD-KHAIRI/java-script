@@ -305,3 +305,104 @@ console.log(yearsUntilRetirement(1985, 'Ahmad Khairi'));
 // § Data 2: Dolphins score 85, 54 and 41. Koalas score 23, 34 and 27
 
 
+// The non-function way to solve this:
+// Test Data 1
+// let dolphinsScore1 = 44;
+// let dolphinsScore2 = 23;
+// let dolphinsScore3 = 71;
+
+// let koalasScore1 = 65;
+// let koalasScore2 = 54;
+// let koalasScore3 = 49;
+
+// Test Data 2
+// let dolphinsScore2 = 85;
+// let dolphinsScore1 = 54;
+// let dolphinsScore3 = 41;
+
+// let koalasScore1 = 23;
+// let koalasScore2 = 34;
+// let koalasScore3 = 27;
+
+// Test Data 3
+// let koalasScore1 = 85;
+// let koalasScore2 = 54;
+// let koalasScore3 = 41;
+
+// let dolphinsScore1 = 23;
+// let dolphinsScore2 = 34;
+// let dolphinsScore3 = 27;
+
+// const avgDolphins = (dolphinsScore1 + dolphinsScore2 + dolphinsScore3) / 3;
+// const avgKoalas = (koalasScore1 + koalasScore2 + koalasScore3) / 3;
+
+// if ((avgDolphins > avgKoalas) && (avgDolphins / avgKoalas >= 2)) {
+//     console.log(`Dolphins win (${avgDolphins} vs ${avgKoalas})`);
+// }
+// else if ((avgDolphins < avgKoalas) && (avgKoalas / avgDolphins >= 2)) {
+//     console.log(`Koalas win (${avgKoalas} vs ${avgDolphins})`);
+// }
+// else {
+//     console.log('No team wins');
+// }
+
+// Solution:
+
+// using arrow function
+// const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+// or using function declaration
+// function calcAverage(a, b, c) {
+//     return (a + b + c) / 3;
+// }
+
+// console.log(calcAverage(2, 3, 4)); // test if function is working
+
+// // Call up function for Test Data 1
+// let scoreDolphins = calcAverage(44, 23, 71);
+// let scoreKoalas = calcAverage(65, 54, 49);
+// console.log(scoreDolphins, scoreKoalas);
+
+// // using function expression
+// const checkWinner = function (avgDolphins, avgKoalas) {
+//     if (avgDolphins >= 2 * avgKoalas) {
+//         console.log(`Dolphins win (${avgDolphins} vs ${avgKoalas})`);
+//     }
+//     else if (avgKoalas >= 2 * avgDolphins) {
+//         console.log(`Koalas win (${avgKoalas} vs ${avgDolphins})`);
+//     }
+//     else {
+//         console.log('No team wins');
+//     }
+// }
+
+// checkWinner(scoreDolphins, scoreKoalas);
+
+// // Test Data 2
+// scoreDolphins = calcAverage(85, 54, 41);
+// scoreKoalas = calcAverage(23, 34, 27);
+// console.log(scoreDolphins, scoreKoalas);
+// checkWinner(scoreDolphins, scoreKoalas);
+
+
+// code without looking at the solution
+
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+
+let scoreDolphins = calcAverage(85, 54, 41);
+let scoreKoalas = calcAverage(23, 34, 27);
+console.log(scoreDolphins, scoreKoalas);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+    if (avgDolphins >= 2 * avgKoalas) {
+        console.log(`Dolphins win (${avgDolphins} vs ${avgKoalas})`);
+    }
+    else if (avgKoalas >= 2 * avgDolphins) {
+        console.log(`Koalas win (${avgKoalas} vs ${avgDolphins}`);
+    }
+    else {
+        console.log('No team wins');
+    }
+}
+
+checkWinner(scoreDolphins, scoreKoalas);
