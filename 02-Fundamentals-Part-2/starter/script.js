@@ -406,3 +406,38 @@ const checkWinner = function (avgDolphins, avgKoalas) {
 }
 
 checkWinner(scoreDolphins, scoreKoalas);
+
+// Recap from Fundamentals Part 1
+
+// switch-case statement
+const time = prompt('Please specify the time to check your schedule');
+
+switch (time) {
+    case '7am':
+    case '8am':
+        console.log('Go jogging');
+        break;
+    case '9am':
+        console.log('Send Iman to school');
+        break;
+    case '10am':
+        console.log('Eat breakfast');
+        break;
+    case '11am':
+        console.log('Do work!');
+        break;
+    case '12pm':
+    case '1pm':
+    case '2pm':
+        console.log('Lunch break');
+        break;
+    default:
+        console.log('Not a valid time')
+}
+
+
+// conditional operator
+// syntax: condition ? exprIfTrue : exprIfFalse;
+const age = 18;
+
+age >= 18 ? console.log('Get a job!') : console.log('Study hard!');
