@@ -441,7 +441,7 @@ switch (time) {
 const age = 18;
 
 age >= 18 ? console.log('Get a job!') : console.log('Study hard!');
-*/
+
 
 // Exercise: How to create a calculator using JavaScript
 // source: YouTuber Dani Krossing
@@ -467,3 +467,64 @@ function calc() {
     // console.log(calculate);
     document.querySelector("#result").innerHTML = calculate;
 }
+*/
+
+// 39. Introduction to Arrays
+
+const friend1 = 'Ahmad';
+const friend2 = 'Khairi';
+const friend3 = 'Hamzah';
+
+// to make an array, do like this
+const friends = ['Ahmad', 'Khairi', 'Hamzah'];
+console.log(friends);
+
+// another way to make array using Array function
+const years = new Array(1985, 1986, 2017);
+
+// how to call up an array
+console.log(friends[0]);
+console.log(friends[1]);
+console.log(friends[2]);
+
+// to get number of elements in the array, do this
+console.log(friends.length);
+
+// to get the last element in the array, do this
+console.log(friends[friends.length - 1]);
+
+// to replace content of an array is possible even when declared as const
+friends[2] = 'Bin';
+console.log(friends);
+
+// but we cannot replace a const array like this
+// friends = ['Iman', 'Ezra', 'Khayr']; // commented to remove error in console
+
+// an array can hold value of different types
+const myInfo = ['Ahmad Khairi', 'Hamzah', 2022 - 1985, 'Engineer', friends];
+console.log(myInfo);
+console.log(myInfo.length);
+
+// Array exercise
+const calcAge = function (birthYear) {
+    return 2022 - birthYear;
+}
+
+const birthYears = [1985, 1986, 2017];
+
+// don't do this
+console.log(calcAge(birthYears)); // expected output NaN
+
+// instead do like this
+const myAge = calcAge(birthYears[0]);
+const sumaiyyahAge = calcAge(birthYears[1]);
+const imanAge = calcAge(birthYears[2]); // or calcAge(birthYears(birthYears.length - 1));
+console.log(myAge, sumaiyyahAge, imanAge);
+
+// we can put function calls in an array like this
+const ages = [calcAge(birthYears[0]), calcAge(birthYears[1]), calcAge(birthYears[2])]
+console.log(ages);
+
+
+
+
