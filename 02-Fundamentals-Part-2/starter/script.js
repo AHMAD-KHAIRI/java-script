@@ -524,7 +524,7 @@ console.log(myAge, sumaiyyahAge, imanAge);
 // we can put function calls in an array like this
 const ages = [calcAge(birthYears[0]), calcAge(birthYears[1]), calcAge(birthYears[2])]
 console.log(ages);
-*/
+
 
 // 40. Basic Array Operations (Methods)
 
@@ -571,8 +571,55 @@ if (friends.includes('Iman')) {
 }
 else
     console.log("No you don't have that element in here");
+*/
 
 
+// 41. Coding challenge #2
+// Steven is still building his tip calculator, using the same rules as before: Tip 15 % of
+// the bill if the bill value is between 50 and 300, and if the value is different, the tip is
+// 20 %.
+// Your tasks:
+// 1. Write a function 'calcTip' that takes any bill value as an input and returns
+// the corresponding tip, calculated based on the rules above(you can check out
+// the code from first tip calculator challenge if you need to). Use the function
+// type you like the most.Test the function using a bill value of 100
+// 2. And now let's use arrays! So create an array 'bills' containing the test data
+// below
+// 3. Create an array 'tips' containing the tip value for each bill, calculated from
+// the function you created before
+// 4. Bonus: Create an array 'total' containing the total values, so the bill + tip
+// Test data: 125, 555 and 44
 
+// own attempt
+const calcTip = function (billValue) {
+    if (billValue >= 50 && billValue <= 300) {
+        return billValue * 0.15;
+    }
+    else {
+        return billValue * 0.2;
+    }
+}
+
+// console.log(calcTip(301));
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(bills, tips);
+
+// bonus
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]
+console.log(total);
+
+// answers from lecture
+// using conditional operator --> syntax: condition ? exprIfTrue : exprIfFalse;
+
+const calcTips = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+const billS = [125, 555, 44];
+const tipS = [calcTips(billS[0]), calcTips(billS[1]), calcTips(billS[2])];
+const totalS = [billS[0] + tipS[0], billS[1] + tipS[1], billS[2] + tipS[2]];
+console.log(billS, tipS, totalS);
 
 
