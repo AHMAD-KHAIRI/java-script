@@ -467,7 +467,7 @@ function calc() {
     // console.log(calculate);
     document.querySelector("#result").innerHTML = calculate;
 }
-*/
+
 
 // 39. Introduction to Arrays
 
@@ -524,6 +524,54 @@ console.log(myAge, sumaiyyahAge, imanAge);
 // we can put function calls in an array like this
 const ages = [calcAge(birthYears[0]), calcAge(birthYears[1]), calcAge(birthYears[2])]
 console.log(ages);
+*/
+
+// 40. Basic Array Operations (Methods)
+
+const friends = ['Ahmad', 'Khairi', 'Bin'];
+
+// first method: push --> adds element to the end of an array
+friends.push('Hamzah');
+console.log(friends); // expected output 'Ahmad' 'Khairi' 'Bin' 'Hamzah'
+
+// push is a function thus it can return something e.g. we can save as variable to show the length of the array
+const newLength = friends.push('Idris');
+console.log(newLength); // expected output 5
+
+// second method: unshift --> adds element at the start of an array
+friends.unshift('Mr.');
+console.log(friends); // expected output 'Mr.' 'Ahmad' 'Khairi' 'Bin' 'Hamzah' 'Idris'
+
+// third method: pop --> removes the last element of an array
+friends.pop();
+console.log(friends); // expected output 'Mr.' 'Ahmad' 'Khairi' 'Bin' 'Hamzah'
+
+// to capture the element that is removed, save the function in a variable
+const popped = friends.pop();
+console.log(popped); // expected output 'Hamzah'
+
+// fourth method: shift --> removes the first element of an array
+friends.shift();
+console.log(friends); // expected output 'Ahmad' 'Khairi' 'Bin'
+
+// fifth method: indexOf --> to tell a position of an element in an array
+console.log(friends.indexOf('Khairi')); // expected output 1
+
+// for an element that is not in the array
+console.log(friends.indexOf('Hamzah')); // expected output -1
+
+// sixth method: includes --> indicates true or false if an element is in the array or not
+// similar method to indexOf method but more modern and useful (ES6)
+console.log(friends.includes('Ahmad')); // expected output true
+console.log(friends.includes('Hamzah')); // expected output false
+
+// includes method can be used in conditional operator (because it returns boolean)
+if (friends.includes('Iman')) {
+    console.log('Yes you have the element');
+}
+else
+    console.log("No you don't have that element in here");
+
 
 
 
