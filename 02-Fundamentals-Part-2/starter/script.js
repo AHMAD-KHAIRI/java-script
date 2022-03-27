@@ -621,7 +621,6 @@ const billS = [125, 555, 44];
 const tipS = [calcTips(billS[0]), calcTips(billS[1]), calcTips(billS[2])];
 const totalS = [billS[0] + tipS[0], billS[1] + tipS[1], billS[2] + tipS[2]];
 console.log(billS, tipS, totalS);
-*/
 
 // recap array
 const khairiArray = {
@@ -645,10 +644,78 @@ const khairi = {
     age: 2022 - 1985,
     // key:value pair #4
     job: 'Engineer',
-    // key-:value pair #5
+    // key:value pair #5
     friends: ['Iman', 'Ezra', 'Khayr']
-}; // the above example, the object 'khairi' contains 5 key-value pairs/ properties.
+};
+console.log(khairi);
+// the above example, the object 'khairi' contains 5 key-value pairs/ properties.
 // keys are also called as properties
-// use arrays for structured/ ordered data e.g. retrieve data based on their order no
-// use objects for unstructured/ unordered data
+// use arrays for structured/ ordered data e.g. to retrieve data based on their order no
+// use objects for unstructured/ unordered data e.g. to retrieve data based on their property name
+*/
+
+// 43. Dot '.' vs Bracket [] notation
+
+// how to retrieve and change data in object
+
+const khairi = {
+    // key:value pair #1
+    firstName: 'Ahmad Khairi',
+    // key:value pair #2
+    lastName: 'Hamzah',
+    // key:value pair #3
+    age: 2022 - 1985,
+    // key:value pair #4
+    job: 'Engineer',
+    // key:value pair #5
+    friends: ['Iman', 'Ezra', 'Khayr']
+};
+console.log(khairi);
+
+// 1st way: dot '.' notation
+console.log(khairi.lastName);
+
+// 2nd way: bracket notation
+console.log(khairi['firstName']);
+
+// with bracket notation, we can enter any expression/ compute it from some operation (computed property name)
+
+// store the repeating key 'Name': firstName, lastName in a variable place it in an expression/operation
+const nameKey = 'Name';
+console.log(khairi['first' + nameKey]);
+// what is happening in the line above?
+// 1stly the nameKey value 'Name' is replaced in the bracket: ['first' + 'Name']
+// 2ndly both strings 'first' and 'Name' is concatenated/combined with the + operator: ['firstName']
+// then the object 'khairi' retrieves the value from the key/property 'firstName' --> 'Ahmad Khairi'
+
+console.log(khairi['last' + nameKey]);
+// strings 'last' and 'Name' is concatenated: 'lastName'
+// retrieves the value from key/property 'lastName' from the object 'khairi'
+
+// we cannot do like this using dot notation:
+// console.log(khairi.'last' + nameKey); // outputs error unexpected string
+
+// let's say we get from prompt
+const interestedIn = prompt('What do you want to know about Khairi? Choose between firstName, lastName, age, job and friends');
+console.log(khairi.interestedIn); // console returned undefined. Why? Because there is no property 'interestedIn' that exists in the object 'khairi'
+
+// to solve it, use bracket notation:
+console.log(khairi[interestedIn]);
+
+// create a logic to output a string when user prompts falsy/ undefined value
+if (khairi[interestedIn]) {
+    console.log(khairi[interestedIn]);
+} else {
+    console.log('Wrong request! Choose between firstName, lastName, age, job and friends.');
+}
+
+// how to use both dot and bracket notation to add new properties to the object
+khairi.location = 'Malaysia';
+khairi['instagram'] = '@a_khairi_h';
+console.log(khairi);
+
+// Challenge
+// Output into console: "Ahmad Khairi have 3 friends, and his best friend is called Iman"
+console.log(`${khairi.firstName} have ${khairi.friends.length} friends, and his best friend is called ${khairi.friends[0]}`);
+
 
