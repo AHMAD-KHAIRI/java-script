@@ -571,7 +571,7 @@ if (friends.includes('Iman')) {
 }
 else
     console.log("No you don't have that element in here");
-*/
+
 
 
 // 41. Coding challenge #2
@@ -621,5 +621,34 @@ const billS = [125, 555, 44];
 const tipS = [calcTips(billS[0]), calcTips(billS[1]), calcTips(billS[2])];
 const totalS = [billS[0] + tipS[0], billS[1] + tipS[1], billS[2] + tipS[2]];
 console.log(billS, tipS, totalS);
+*/
 
+// recap array
+const khairiArray = {
+    'Ahmad',
+    'Khairi',
+    2022 - 1985,
+    'Engineer',
+    ['Iman', 'Ezra', 'Khayr']
+};
+
+// 42. Introduction to Objects
+
+// {} refers to object, [] refers to array
+// object contains key:value pairs
+const khairi = {
+    // key:value pair #1
+    firstName: 'Ahmad Khairi',
+    // key:value pair #2
+    lastName: 'Hamzah',
+    // key:value pair #3
+    age: 2022 - 1985,
+    // key:value pair #4
+    job: 'Engineer',
+    // key-:value pair #5
+    friends: ['Iman', 'Ezra', 'Khayr']
+}; // the above example, the object 'khairi' contains 5 key-value pairs/ properties.
+// keys are also called as properties
+// use arrays for structured/ ordered data e.g. retrieve data based on their order no
+// use objects for unstructured/ unordered data
 
