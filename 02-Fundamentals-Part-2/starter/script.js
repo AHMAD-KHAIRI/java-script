@@ -652,7 +652,6 @@ console.log(khairi);
 // keys are also called as properties
 // use arrays for structured/ ordered data e.g. to retrieve data based on their order no
 // use objects for unstructured/ unordered data e.g. to retrieve data based on their property name
-*/
 
 // 43. Dot '.' vs Bracket [] notation
 
@@ -717,5 +716,60 @@ console.log(khairi);
 // Challenge
 // Output into console: "Ahmad Khairi have 3 friends, and his best friend is called Iman"
 console.log(`${khairi.firstName} have ${khairi.friends.length} friends, and his best friend is called ${khairi.friends[0]}`);
+*/
 
+// 44. Object Methods
 
+const khairi = {
+    // key:value pair #1
+    firstName: 'Ahmad Khairi',
+    // key:value pair #2
+    lastName: 'Hamzah',
+    // key:value pair #3
+    birthYear: 1985,
+    // key:value pair #4
+    job: 'Engineer',
+    // key:value pair #5 in the form of an array
+    friends: ['Iman', 'Ezra', 'Khayr'],
+    hasDriversLicense: true,
+
+    // key:value pair #6 in the form of a function expression
+    // calcAge: function (birthYear) {
+    //     return 2022 - birthYear;
+    // }
+
+    // key:value pair #7 using 'this' keyword
+    // definition of 'this': the object that is executing the current function
+    // calcAge: function () {
+    //     console.log(this);
+    //     return 2022 - this.birthYear;
+    // }
+
+    // key:value pair #8 using 'this'
+    calcAge: function () {
+        this.age = 2022 - this.birthYear;
+        return this.age;
+    },
+
+    // solution to challenge
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAge()} year old ${khairi.job}, and he ${this.hasDriversLicense ? 'has a' : 'does not have a'} driver's license.`
+    }
+};
+
+// calling a function from an object using dot notation
+// console.log(khairi.calcAge(1985));
+
+// using 'this' method 1: performs 1 time calculation and store in 'age'
+console.log(khairi.calcAge());
+
+// using 'this' method 2: saved value in 'age' is called
+console.log(khairi.age);
+
+// calling a function from an object using bracket notation
+// console.log(khairi['calcAge']());
+console.log(khairi['age']);
+
+// Challenge
+// "Ahmad Khairi is a 37 year old engineer, and he has a driver's license"
+console.log(khairi.getSummary());
