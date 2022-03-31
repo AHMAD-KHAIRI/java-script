@@ -716,7 +716,6 @@ console.log(khairi);
 // Challenge
 // Output into console: "Ahmad Khairi have 3 friends, and his best friend is called Iman"
 console.log(`${khairi.firstName} have ${khairi.friends.length} friends, and his best friend is called ${khairi.friends[0]}`);
-*/
 
 // 44. Object Methods
 
@@ -735,17 +734,17 @@ const khairi = {
 
     // key:value pair #6 in the form of a function expression
     // calcAge: function (birthYear) {
-    //     return 2022 - birthYear;
-    // }
+        //     return 2022 - birthYear;
+        // }
 
-    // key:value pair #7 using 'this' keyword
-    // definition of 'this': the object that is executing the current function
-    // calcAge: function () {
-    //     console.log(this);
-    //     return 2022 - this.birthYear;
-    // }
+        // key:value pair #7 using 'this' keyword
+        // definition of 'this': the object that is executing the current function
+        // calcAge: function () {
+            //     console.log(this);
+            //     return 2022 - this.birthYear;
+            // }
 
-    // key:value pair #8 using 'this'
+            // key:value pair #8 using 'this'
     calcAge: function () {
         this.age = 2022 - this.birthYear;
         return this.age;
@@ -773,3 +772,53 @@ console.log(khairi['age']);
 // Challenge
 // "Ahmad Khairi is a 37 year old engineer, and he has a driver's license"
 console.log(khairi.getSummary());
+*/
+
+//31/3/2022 @ 10.10PM
+// Coding Challenge #3
+
+// Let's go back to Mark and John comparing their BMIs! This time, let's use objects to implement the calculations!
+// Remember: BMI = mass / height ** 2 = mass/ (height * height)(mass in kg and height in meter)
+// Your tasks:
+// 1. For each of them, create an object with properties for their full name, mass, and height (Mark Miller and John Smith)
+// 2. Create a 'calcBMI' method on each object to calculate the BMI (the same method on both objects).
+// Store the BMI value to a property, and also return it from the method
+// 3. Log to the console who has the higher BMI, together with the full name and the respective BMI.
+// Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+// Test data: Marks weights 78 kg and is 1.69 m tall.John weights 92 kg and is 1.95 m tall.
+
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        return this.mass / (this.height * this.height);
+    }
+};
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass / this.height ** 2;
+        return this.bmi;
+    }
+};
+
+console.log(mark, john);
+console.log(mark.calcBMI());
+
+john.calcBMI();
+console.log(john.bmi);
+
+// "John's BMI (28.3) is higher than Mark's (23.9)!"
+if (mark.calcBMI() > john.bmi) {
+    console.log(`${mark.fullName}'s BMI (${mark.calcBMI()}) is higher than ${john.fullName}'s BMI (${john.bmi})
+)`)
+} else if (john.bmi > mark.calcBMI()) {
+    console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.calcBMI()})`)
+}
+else {
+    console.log(`They are the same`)
+}
