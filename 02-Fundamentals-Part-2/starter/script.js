@@ -441,7 +441,7 @@ switch (time) {
 const age = 18;
 
 age >= 18 ? console.log('Get a job!') : console.log('Study hard!');
-
+*/
 
 // Exercise: How to create a calculator using JavaScript
 // source: YouTuber Dani Krossing
@@ -468,7 +468,7 @@ function calc() {
     document.querySelector("#result").innerHTML = calculate;
 }
 
-
+/*
 // 39. Introduction to Arrays
 
 const friend1 = 'Ahmad';
@@ -772,7 +772,6 @@ console.log(khairi['age']);
 // Challenge
 // "Ahmad Khairi is a 37 year old engineer, and he has a driver's license"
 console.log(khairi.getSummary());
-*/
 
 //31/3/2022 @ 10.10PM
 // Coding Challenge #3
@@ -815,10 +814,18 @@ console.log(john.bmi);
 // "John's BMI (28.3) is higher than Mark's (23.9)!"
 if (mark.calcBMI() > john.bmi) {
     console.log(`${mark.fullName}'s BMI (${mark.calcBMI()}) is higher than ${john.fullName}'s BMI (${john.bmi})
-)`)
+    )`)
 } else if (john.bmi > mark.calcBMI()) {
     console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.calcBMI()})`)
 }
 else {
     console.log(`They are the same`)
+}
+
+*/
+// 46. Iteration: The for loop
+
+// for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep}`)
 }
