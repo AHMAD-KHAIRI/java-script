@@ -822,10 +822,107 @@ else {
     console.log(`They are the same`)
 }
 
-*/
 // 46. Iteration: The for loop
 
 // for loop keeps running while condition is TRUE
 for (let rep = 1; rep <= 10; rep++) {
     console.log(`Lifting weights repetition ${rep}`)
+}
+*/
+
+// 47. Looping Arrays, Breaking and Continuing
+
+// {} refers to object, [] refers to array
+// object contains key:value pairs
+const khairi = [
+    // Array [0]
+    'Ahmad Khairi',
+    // Array [1]
+    'Hamzah',
+    // Array [2]
+    2022 - 1985,
+    // Array [3]
+    'Engineer',
+    // Array [4]
+    ['Iman', 'Ezra', 'Khayr'],
+    // Array [5]
+    true
+];
+
+// manually we use loops to achieve the below:
+// console.log(khairi[0]);
+// console.log(khairi[1]);
+// console.log(khairi[2]);
+// console.log(khairi[3]);
+// console.log(khairi[4]);
+
+//replace the above with a for loop
+// for (let i = 0; i < 4; i++) {
+//     console.log(khairi[i], typeof khairi[i]);
+// }
+
+// if we don't know the length of the Array, instead of putting in the number of Array, we use .length
+// for (let i = 0; i < khairi.length; i++) {
+//     console.log(khairi[i], typeof khairi[i]);
+// }
+
+// use for loop to create a new array
+// first create an empty array outside of the loop
+const types = [];
+
+// normally this is how we create an array:
+// types[0] = 'string';
+
+// but instead, we insert it in the for loop and replace the number of Array with [i] like this
+for (let i = 0; i < khairi.length; i++) {
+    // Reading from khairi array:
+    console.log(khairi[i], typeof khairi[i]);
+
+    // First way: Filling types array:
+    // types[i] = typeof khairi[i]; // types[0] = typeof khairi[0];
+
+    // Alternatively, we could also use push method where it adds element at the end of an array:
+    types.push(typeof khairi[i]);
+}
+
+console.log(types);
+
+// exercise: calculate the age from the birth years below
+const years = [1985, 1986, 2017];
+
+// create an empty array to hold the ages
+const ages = [];
+
+// create a for loop and print to console the ages
+for (let i = 0; i < years.length; i++) {
+    ages.push(2022 - years[i]);
+}
+console.log(ages);
+
+// next is to learn 2 important statements in loops: continue and break
+// continue is used to exit the current iteration of the loop and continue to the next one
+// break is used to completely terminate the whole loop
+
+// how to use continue statement in khairi array
+console.log('=== ONLY STRINGS ===');
+for (let i = 0; i < khairi.length; i++) {
+    // if the value of the array is not a string it will not be printed out and exit the current iteration then continue to the next array
+    // for example khairi[2] = 2022 - 1985 which is a number and not a string so the condition is TRUE
+    // when the condition is TRUE, then the continue statement will run which then will exit the current iteration/line of code
+    if (typeof khairi[i] !== 'string') continue;
+
+    // this next line of code is not executed when continue statement above is TRUE e.g. a number.
+    console.log(khairi[i], typeof khairi[i]);
+}
+
+// how to use break statement in khairi array
+console.log('=== BREAK WITH NUMBER ===');
+for (let i = 0; i < khairi.length; i++) {
+    // if the value of the array is a number, the break statement will run and immediately exit the loop completely
+    // array[2] is a number, so the break statement will run and exit the loop completely
+    // the rest of the array is not executed
+    if (typeof khairi[i] === 'number') break;
+
+    // this next line of code is not executed once the condition above is TRUE and the loop is terminated
+    console.log(khairi[i], typeof khairi[i]);
 }
