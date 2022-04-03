@@ -828,7 +828,7 @@ else {
 for (let rep = 1; rep <= 10; rep++) {
     console.log(`Lifting weights repetition ${rep}`)
 }
-*/
+
 
 // 47. Looping Arrays, Breaking and Continuing
 
@@ -926,3 +926,37 @@ for (let i = 0; i < khairi.length; i++) {
     // this next line of code is not executed once the condition above is TRUE and the loop is terminated
     console.log(khairi[i], typeof khairi[i]);
 }
+*/
+
+// 48. Looping Backwards and Loops in Loops
+
+const khairi = [
+    // Array [0]
+    'Ahmad Khairi',
+    // Array [1]
+    'Hamzah',
+    // Array [2]
+    2022 - 1985,
+    // Array [3]
+    'Engineer',
+    // Array [4]
+    ['Iman', 'Ezra', 'Khayr'],
+    true
+];
+
+// How to loop array backwards: Array [4] - [0]
+for (let i = khairi.length - 1; i >= 0; i--) {
+    console.log(i, khairi[i]);
+}
+
+// How to create a loop inside of a loop
+// Example: Repeat exercise 3 times with 5 repetitions per exercise
+for (let exercise = 1; exercise <= 3; exercise++) {
+    console.log(`=========== Starting Exercise ${exercise}`);
+
+    // Inner 'repetition' loop will repeat until complete then exit current Main 'exercise' loop and start again
+    for (let repetition = 1; repetition <= 5; repetition++) {
+        console.log(`Exercise ${exercise}: Lifting weight repetition ${repetition}`);
+    }
+    // In total 3*5=15 repetitions
+};
