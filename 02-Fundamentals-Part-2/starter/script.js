@@ -926,7 +926,7 @@ for (let i = 0; i < khairi.length; i++) {
     // this next line of code is not executed once the condition above is TRUE and the loop is terminated
     console.log(khairi[i], typeof khairi[i]);
 }
-*/
+
 
 // 48. Looping Backwards and Loops in Loops
 
@@ -960,3 +960,35 @@ for (let exercise = 1; exercise <= 3; exercise++) {
     }
     // In total 3*5=15 repetitions
 };
+*/
+
+// 49. The while loop
+
+// for (let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep}`)
+// }
+
+// while loop will run when the while condition is TRUE e.g. rep <= 10
+
+let rep = 1;
+while (rep <= 10) {
+    // console.log(`Lifting weights repetition ${rep}`);
+    rep++;
+}
+
+// Example: Generate a Random variable - roll a dice until we get the number 6
+// let dice = Math.random() * 6;
+// MDN: The Math.random() function returns a floating-point, pseudo-random number in the range 0 to less than 1 (inclusive of 0, but not 1)
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+// MDN: The Math.trunc() function returns the integer part of a number by removing any fractional digits.
+// + 1 is added at the end so that number is not = 0
+// console.log(dice);
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('Loop is about to end...');
+}
+// Conclusion: The while loop does really not have to depend on any counter variable. Whenver we need a loop without a counter, we can use the while loop. That happens whenever we do not know beforehand how many iterations the loop will have.
+
