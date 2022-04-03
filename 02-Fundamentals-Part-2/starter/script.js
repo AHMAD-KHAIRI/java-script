@@ -960,7 +960,7 @@ for (let exercise = 1; exercise <= 3; exercise++) {
     }
     // In total 3*5=15 repetitions
 };
-*/
+
 
 // 49. The while loop
 
@@ -991,4 +991,60 @@ while (dice !== 6) {
     if (dice === 6) console.log('Loop is about to end...');
 }
 // Conclusion: The while loop does really not have to depend on any counter variable. Whenver we need a loop without a counter, we can use the while loop. That happens whenever we do not know beforehand how many iterations the loop will have.
+*/
+
+// 50. Coding Challenge #4
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+for (let i = 0; i <= bills.length - 1; i++) {
+    // Run 1st statement: Calculate the tips from bills
+    const calcTip = function () {
+        if (bills[i] >= 50 && bills[i] <= 300) {
+            return bills[i] * 0.15;
+        }
+        else {
+            return bills[i] * 0.2;
+        }
+    }
+
+    // Run 2nd statement: Add the result of calcTip to the tips array using .push method
+    tips.push(calcTip(bills[i]));
+
+    // Run 3rd statement: Add bills and tips and transfer the result to totals using .push method
+    totals.push(bills[i] + tips[i]);
+
+    // Print to console
+    console.log(`For bill amount ${bills[i]}, the tip is ${tips[i]} and the total is ${totals[i]}`);
+}
+
+// Create a function to calculate the average of all numbers where average = sum / count
+
+// sum is equal to all of the totals array
+// sum = totals[0] + totals[1] ... totals[9]
+// count is equal to the length of the array
+// let sum = 0;
+// for (let i = 0; i < totals.length; i++) {
+//     sum += totals[i];
+// }
+// console.log(sum);
+
+const calcAverage = function (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        // sum = sum + arr[i];
+        sum += arr[i]; // alternative to the above
+    }
+    console.log(sum);
+    return sum / arr.length;
+}
+console.log(calcAverage([2, 3, 6]));
+console.log(calcAverage(bills));
+console.log(calcAverage(tips));
+console.log(calcAverage(totals));
+
+
+
+
 
