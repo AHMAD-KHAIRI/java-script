@@ -1,0 +1,139 @@
+22.11.2021
+1. Introduction to JavaScript
+
+JS=JavaScript
+
+What is it?
+A high-level, object-oriented, multi-paradigm programming language.
+*OOP: Object Oriented Programming - based on object for storing most kinds of data
+
+What can JS do?
+Dynamic effects and web applications in the browser
+Build native mobile and desktop applications
+
+Example of applications: React, Angular
+
+JS releases: ES5 --> ES6/ES2015 --> ... --> ES11/ES2020
+*ES stands for ECMAScript
+
+23.11.2021
+2. Linking a JavaScript file
+
+Use console.log to display an output to the browser
+for example to display the results of a math calculation in the console of the browser developer tool
+e.g. console.log(40+45+50);
+
+If we place <script> </script> inside a html, it is called inline script.
+Common practice is to create a separate file for JavaScript and link it to the html file.
+Where do we put it? Insert the <script> tag at the end of the <body> tag in the html and include the src.
+e.g.   
+<body>
+  <h1>JavaScript Fundamentals – Part 1</h1>
+
+  <script src="script.js"></script>
+</body>
+
+3. Values and Variables
+
+A variable is like a box where we can put anything inside it.
+For example let firstName = "Khairi";
+where firstName is the variable and the value assigned to it is "Khairi"
+
+Variable naming convention:
+camel Case variable e.g. firstName
+variable with underscore e.g. first_name
+Illegal when variable starts with a number e.g. 3years 
+A variable can consist of numbers, letters, underscores or $ signs
+
+taken from wikipedia: Data types and constructor functions use upper camel case (RegExp, TypeError, XMLHttpRequest, DOMObject) 
+and methods use lower camel case (getElementById, getElementsByTagNameNS, createCDATASection).
+
+reserved JS keyword e.g. 'new', 'function', 'name', etc --> will get SyntaxError unexpected token
+
+25.11.2021
+4. Data Types
+
+A data type is either:
+1. An Object
+2. A Primitive: 
+
+There are 7 types of Primitive data types:
+1.number 2.string 3.boolean 4.undefined 5.null 6.symbol 7.BigInt
+
+- number: floating point numbers, used for decimals and integers e.g. let age = 36;
+- string:a sequence of characters, used for text always put in quotes (either single or double) e.g. let firstName = "Ahmad Khairi";
+- boolean: logical type either true or false, used when taking/making decisions e.g. let fullAge = true;
+- undefined: a value taken by a variable that is not yet defined ('empty value') e.g. let children;
+- null: also means 'empty value' same as undefined
+- symbol: value that is unique and cannot be changed, introduced in ES2015
+- BigInt: integers which are too big/large than the Number data type can hold, introduced in ES2020
+Remark: in JS, data types are automatically defined of a value stored in a variable --> called dynamic typing
+
+operator: typeof
+The typeof operator returns a string indicating the type of the unevaluated operand. 
+e.g. let javaScriptIsFun = true;
+console.log(typeof javaScriptIsFun);
+--> expected output: boolean
+
+5. let, const and var
+
+let --> values can be re-assigned
+const --> values are fixed
+var --> not to be used when declaring a variable
+
+6. Basic Operators
+
+Math Operators: +, -, *, /, +=, -= *=, /=, ++, --, %, etc
+Comparison Operators: >, <, ==, >=, <=, etc
+
+
+7. Operator Precedence
+
+MDN: Operator precedence determines how operators are parsed concerning each other. 
+Operators with higher precedence become the operands of operators with lower precedence. 
+
+Example: math operators such as +, -, *, / have higher precedence than comparison operators >, <, <=, >=
+
+Math operators are also executed from left-to-right order
+
+8. Strings and Template literals
+
+Use single ('') or double quotes ("") to write strings
+Concatenate multiple strings by using +
+Writing strings this way is troublesome especially when it involves spaces and variables
+Example: "Hello! I am " + myName + " and I am " + (year - birthYear) + " years old."
+
+To write template literals we use backticks `` which is above the tab key.
+Template literals makes it easier to write strings and combine with variables.
+Example: `Hello! I am ${myName} and I am ${year - birthYear} years old.`
+
+To write multi-line strings in ES6 we can use backticks and it will be recognized automatically in the browser.
+Example: 
+`Hello! I am ${myName}.
+I am ${year - birthYear} years old.`
+
+9. Taking decisions using if / else statement
+
+syntax:
+if (condition is true) {
+ run this statement
+} else {
+ run this statement
+}
+
+10. Type conversion and coercion
+- Conversion - manually convert data type to another data type
+- Coercion - JavaScript automatically converts values of data type to another data type e.g. string to number or number to string
+
+10.1 Type conversion
+Using the Number() function: Values of other types can be converted to numbers.
+
+10.2 Type coercion
+Using Plus (+) operator --> Values of other types is first converted to string
+Using Minus (-), Multiply(*), Division (/) operator --> Values of other types is first converted to number
+
+11. Truthy and Falsy Values
+
+- Falsy values are values that are not exactly false but wil become false when we try to convert them into a boolean.
+
+- There are 5 falsy vaLues: 0, '', undefined, null, NaN
