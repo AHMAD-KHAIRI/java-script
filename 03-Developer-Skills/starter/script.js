@@ -40,7 +40,7 @@ console.log(testSignal[0].values[0].value);
 console.log(testSignal[0].values[0].timestamp);
 console.log(testSignal[1].values[0].value);
 console.log(testSignal[1].values[0].timestamp);
-*/
+
 
 // 23 April 2022 @ 11.21 PM
 // 59. Using Google, StackOverflow and MDN
@@ -140,3 +140,36 @@ const calcTempAmplitudeNew = function (t1, t2) {
 // test function with 2 arrays
 const amplitudeNew = calcTempAmplitudeNew([0, 1, 2],[3, 4, 5]);
 console.log(amplitudeNew);
+*/
+
+// 24 April 2022 @ 3.54 PM
+// 61. Debugging with console and breakpoints
+
+const measureKelvin = function () {
+    const measurement = {
+        type: 'temp',
+        unit: 'celcius',
+
+        // C) Fix the bug
+        value: Number(prompt('Degrees celcius:'))
+    }
+
+    console.log(measurement);
+    console.log(typeof (measurement.value));
+    
+    // B) Find the bug
+    // Display object in the form of a table
+    console.table(measurement);
+
+    const kelvin = console.log(`${measurement.value} Celcius is equal to ${measurement.value + 273} Kelvin`);
+    return kelvin;
+};
+// A) Identify the bug
+console.log(measureKelvin());
+
+// Different console types
+console.warn('This is a warning!');
+console.error('This is an error!');
+
+// We can use debugger statement to invoke debugging function in web console (if available)
+//debugger;
