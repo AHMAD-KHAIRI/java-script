@@ -140,7 +140,7 @@ const calcTempAmplitudeNew = function (t1, t2) {
 // test function with 2 arrays
 const amplitudeNew = calcTempAmplitudeNew([0, 1, 2],[3, 4, 5]);
 console.log(amplitudeNew);
-*/
+
 
 // 24 April 2022 @ 3.54 PM
 // 61. Debugging with console and breakpoints
@@ -173,3 +173,46 @@ console.error('This is an error!');
 
 // We can use debugger statement to invoke debugging function in web console (if available)
 //debugger;
+*/
+
+// 07.05.2022 @ 10.06 AM
+// 62. Coding Challenge #1
+
+// Coding Challenge #1
+// Given an array of forecasted maximum temperatures, the thermometer displays a
+// string with the given temperatures. Example: [17, 21, 23] will print "... 17ºC in 1
+// days ... 21ºC in 2 days ... 23ºC in 3 days ..."
+// Your tasks:
+// 1. Create a function 'printForecast' which takes in an array 'arr' and logs a
+// string like the above to the console. Try it with both test datasets.
+// 2. Use the problem-solving framework: Understand the problem and break it up
+// into sub-problems!
+// Test data:
+const data1 = [17, 21, 23];
+const data2 = [12, 5, -5, 0, 4];
+
+// const printForecast = function (data1, data2) {
+//     const temp = data1.concat(data2);
+//     console.log(temp);
+
+//     for (let i = 0; i < temp.length; i++) {
+//         console.log(`... ${temp[i]}ºC in ${[i + 1]} day`);
+//     }
+// };
+
+// test function with array
+// printForecast([12, 13, 14]);
+
+// test function with test data
+// printForecast(data1, data2);
+
+// print function as a string
+const printForecastAsAString = function (arr) {
+    let str = '';
+    for (let i = 0; i < arr.length; i++) {
+        str += `${arr[i]}ºC in ${[i + 1]} days ... `;
+    }
+    console.log('... ' + str);
+}
+
+printForecastAsAString(data1.concat(data2));
