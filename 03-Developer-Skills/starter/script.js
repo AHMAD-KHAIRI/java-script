@@ -173,7 +173,7 @@ console.error('This is an error!');
 
 // We can use debugger statement to invoke debugging function in web console (if available)
 //debugger;
-*/
+
 
 // 07.05.2022 @ 10.06 AM
 // 62. Coding Challenge #1
@@ -216,3 +216,5 @@ const printForecastAsAString = function (arr) {
 }
 
 printForecastAsAString(data1.concat(data2));
+*/
+
