@@ -1,0 +1,25 @@
+what is DOM: Document Object Model
+Allows Javascript to access html elements and styles e.g. change text, html attributes
+DOM manipulation using document.querySelector()
+
+document. --> always the starting point to access html elements
+
+<html>
+	<head>
+		<title> </title>
+	</head>
+	
+	<body>
+		<section>
+	      	<p> </p>
+		</section>
+	</body>
+</html>
+
+document.head OR document.body --> accesses the html head or body element
+
+document.head.title --> accesses the html head title element
+
+document.body.section --> accesses the html body section element
+
+document.body.section.p --> accesses the html body section paragraph element
