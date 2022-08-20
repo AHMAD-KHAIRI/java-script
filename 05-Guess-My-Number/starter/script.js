@@ -35,17 +35,30 @@ console.log(document.querySelector('.guess').value);
 // });
 
 //another example of event listener
-document.querySelector('.check').addEventListener('dblclick', function () {
-  console.log((document.querySelector('.score').textContent = 10));
-});
+// document.querySelector('.check').addEventListener('dblclick', function () {
+//   console.log((document.querySelector('.score').textContent = 10));
+// });
 
+// 20.08.2022 @ 10.19 AM
+// Added random number into the number input/class and save it in a variable
+const secretNumber = Math.trunc(Math.random() * 20 + 1);
+document.querySelector('.number').textContent = secretNumber;
+
+// from 23.05.2022:
 document.querySelector('.check').addEventListener('click', function () {
   // save the value in the variable guess and convert it to type Number
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
-  // check if there is a value inside the input element
+  // check if there is no value inside the input element using if else statement
   if (!guess) {
-    document.querySelector('.message').textContent = '🛑No Number!';
+    document.querySelector('.message').textContent = '⛔ No Number!';
   }
+  // Added else if and else conditional on 20.08.2022
+  else if (guess === secretNumber) {
+    document.querySelector('.message').textContent = '🎉 Correct Number!';
+    // 🎉 Win + ; to popup emoji selector in VS Code
+  } else
+    document.querySelector('.message').textContent = 'Continue guessing...';
 });
+// end of line from 23.05.2022
