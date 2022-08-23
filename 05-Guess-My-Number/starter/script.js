@@ -44,6 +44,9 @@ console.log(document.querySelector('.guess').value);
 const secretNumber = Math.trunc(Math.random() * 20 + 1);
 document.querySelector('.number').textContent = secretNumber;
 
+// 23.08.2022: declare a variable to store the starting score value instead of inside the DOM
+let score = 20;
+
 // from 23.05.2022:
 document.querySelector('.check').addEventListener('click', function () {
   // save the value in the variable guess and convert it to type Number
@@ -54,11 +57,35 @@ document.querySelector('.check').addEventListener('click', function () {
   if (!guess) {
     document.querySelector('.message').textContent = '⛔ No Number!';
   }
-  // Added else if and else conditional on 20.08.2022
+  // Added else if on 20.08.2022
   else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🎉 Correct Number!';
     // 🎉 Win + ; to popup emoji selector in VS Code
-  } else
-    document.querySelector('.message').textContent = 'Continue guessing...';
+  }
+  // Added else if and nested if else on 23.08
+  else if (guess > secretNumber) {
+    if (score > 1) {
+      document.querySelector('.message').textContent = '📈 Too high!';
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = '👎You lost the game!';
+      document.querySelector('.score').textContent = 0;
+    }
+  }
+  // Added else if and nested if else on 23.08
+  else if (guess < secretNumber) {
+    if (score > 1) {
+      document.querySelector('.message').textContent = '📉 Too low!';
+      score--;
+      document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.message').textContent = '👎You lost the game!';
+      document.querySelector('.score').textContent = 0;
+    }
+  }
+  // Added else on 20.08
+  // else document.querySelector('.message').textContent = 'Continue guessing...';
 });
-// end of line from 23.05.2022
+
+// 23.08.2022 @ 11.31 PM
