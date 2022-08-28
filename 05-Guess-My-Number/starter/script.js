@@ -41,8 +41,7 @@ console.log(document.querySelector('.guess').value);
 
 // 20.08.2022 @ 10.19 AM
 // Added random number into the number input/class and save it in a variable
-const secretNumber = Math.trunc(Math.random() * 20 + 1);
-document.querySelector('.number').textContent = secretNumber;
+let secretNumber = Math.trunc(Math.random() * 20 + 1);
 
 // 23.08.2022: declare a variable to store the starting score value instead of inside the DOM
 let score = 20;
@@ -63,6 +62,9 @@ document.querySelector('.check').addEventListener('click', function () {
   else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🎉 Correct Number!';
     // 🎉 Win + ; to popup emoji selector in VS Code
+
+    // reveals the secret number
+    document.querySelector('.number').textContent = secretNumber;
 
     // change the background color
     document.querySelector('body').style.backgroundColor = '#60b347';
@@ -101,3 +103,47 @@ document.querySelector('.check').addEventListener('click', function () {
 // 23.08.2022 @ 11.31 PM
 
 // 28.08.2022 @ 9.06 AM Manipulating CSS Styles
+
+// Coding Challenge #1
+// Implement a game rest functionality, so that the player can make a new guess!
+// Your tasks:
+// 1. Select the element with the 'again' class and attach a click event handler
+// 2. In the handler function, restore initial values of the 'score' and
+// 'secretNumber' variables
+// 3. Restore the initial conditions of the message, number, score and guess input
+// fields
+// 4. Also restore the original background color (#222) and number width (15rem)
+// GOOD LUCK 😀
+
+// My solution:
+// document.querySelector('.again').addEventListener('click', function () {
+//   document.location.reload();
+// });
+// My solution above is not the correct because when page is reloaded, the high scores will reset back to 0
+// Remark: at this point, high score is not saved into any variable yet!
+
+// Solution from udemy trainer:
+// Step 1:
+document.querySelector('.again').addEventListener('click', function () {
+  // Step 2:
+  score = 20;
+  // secretNumber was changed from const to let
+  secretNumber = Math.trunc(Math.random() * 20 + 1);
+
+  // Step 3:
+  // Change the message text back to initial
+  document.querySelector('.message').textContent = 'Start guessing...';
+  // Change the number text back to initial
+  document.querySelector('.number').textContent = '?';
+  // Change the score text back to initial
+  document.querySelector('.score').textContent = score;
+  // Change the guess value back to initial
+  document.querySelector('.guess').value = '';
+
+  // Step 4:
+  // change the background color of the html body back to initial
+  document.querySelector('body').style.backgroundColor = '#222';
+
+  // Change the width size of the number div box back to initial
+  document.querySelector('.number').style.width = '15rem';
+});
