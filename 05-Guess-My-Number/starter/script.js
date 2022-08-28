@@ -54,15 +54,24 @@ document.querySelector('.check').addEventListener('click', function () {
   console.log(guess, typeof guess);
 
   // check if there is no value inside the input element using if else statement
+  // When there is no input
   if (!guess) {
     document.querySelector('.message').textContent = '⛔ No Number!';
   }
   // Added else if on 20.08.2022
+  // When guess is correct and player wins
   else if (guess === secretNumber) {
     document.querySelector('.message').textContent = '🎉 Correct Number!';
     // 🎉 Win + ; to popup emoji selector in VS Code
+
+    // change the background color
+    document.querySelector('body').style.backgroundColor = '#60b347';
+
+    // Increase the width size of the number box
+    document.querySelector('.number').style.width = '30rem';
   }
   // Added else if and nested if else on 23.08
+  // When guess is too high
   else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector('.message').textContent = '📈 Too high!';
@@ -74,6 +83,7 @@ document.querySelector('.check').addEventListener('click', function () {
     }
   }
   // Added else if and nested if else on 23.08
+  // When guess is too low
   else if (guess < secretNumber) {
     if (score > 1) {
       document.querySelector('.message').textContent = '📉 Too low!';
@@ -89,3 +99,5 @@ document.querySelector('.check').addEventListener('click', function () {
 });
 
 // 23.08.2022 @ 11.31 PM
+
+// 28.08.2022 @ 9.06 AM Manipulating CSS Styles
