@@ -46,6 +46,9 @@ let secretNumber = Math.trunc(Math.random() * 20 + 1);
 // 23.08.2022: declare a variable to store the starting score value instead of inside the DOM
 let score = 20;
 
+// 29.08.2022: declare a variable to store the highscore value
+let highscore = 0;
+
 // from 23.05.2022:
 document.querySelector('.check').addEventListener('click', function () {
   // save the value in the variable guess and convert it to type Number
@@ -71,6 +74,12 @@ document.querySelector('.check').addEventListener('click', function () {
 
     // Increase the width size of the number box
     document.querySelector('.number').style.width = '30rem';
+
+    // 29.08.2022: when user guesses the number correct, save and display the highest score
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
   }
   // Added else if and nested if else on 23.08
   // When guess is too high
