@@ -12,7 +12,7 @@ const btnsOpenModal = document.querySelectorAll('.show-modal');
 // Note: after the closeModal function, we also created the openModal function
 // The variable openModal is inserted in the for loop condition
 const openModal = function () {
-  console.log('Button clicked');
+  // console.log('Button clicked');
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
 };
@@ -56,3 +56,26 @@ const closeModal = function () {
 // Note: closeModal is inserted instead of a function () because we want the closeModal function to be run after the 'click'
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+// 81. Handling an "Esc" Keypress Event. Coded on 04092022
+// Keyboard event are called Global event
+// Examples of keyboard events:
+// 'keydown' = is fired when key is pressed down on the keyboard.
+// 'keypress' = is fired continuously as long as the key is pressed on the keyboard.
+// 'keyup' = is fired when we lift our finger off the key on the keyboard.
+
+document.addEventListener('keydown', function (event) {
+  // console.log('A key was pressed!');
+
+  // When a keydown event happens, JS will call this function and pass in the 'event' object as an argument
+  // We then use console.log to find out the key that we would like to pass in e.g 'Escape' key
+  // console.log(event.key);
+
+  // Then we do an if statement to trigger a condition when the 'Escape' key has been pressed
+  // Also, if the modal does not contain the hidden class, then close the modal by calling the closeModal function
+  // we use && to include 2 conditions in one if statement
+  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+    // console.log('Esc key was pressed!');
+    closeModal();
+  }
+});
