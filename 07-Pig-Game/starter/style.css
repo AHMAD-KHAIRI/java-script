@@ -165,3 +165,8 @@ main {
   font-weight: 700;
   color: #c7365f;
 }
+
+/* add the hidden class to hide the dice at start of the game */
+.hidden {
+  display: none;
+}
