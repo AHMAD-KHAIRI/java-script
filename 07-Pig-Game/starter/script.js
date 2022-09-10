@@ -1,68 +1,62 @@
 'use strict';
 
 // select elements by id using 2 ways: querySelector or getElementById
-const score0Element = document.querySelector('#score--0');
-const score1Element = document.getElementById('score--1');
+// PO : Player 0, P1 : Player 1
+const P0Element = document.querySelector('.player--0');
+const P1Element = document.querySelector('.player--1');
+const scoreP0Element = document.querySelector('#score--0');
+const scoreP1Element = document.getElementById('score--1');
+const currentScoreP0Element = document.getElementById('current--0');
+const currentScoreP1Element = document.getElementById('current--1');
 const diceElement = document.querySelector('.dice');
-
-score0Element.textContent = 0;
-score1Element.textContent = 0;
-
-// hide the dice at start of the game
-diceElement.classList.add('hidden');
-
-const player = document.querySelector('.player');
-const name = document.querySelector('.name');
-const current = document.querySelector('.current');
-const dice = document.querySelector('.dice');
+// resumed code on 10.09.2022
 const btnNewGame = document.querySelector('.btn--new');
 const btnRollDice = document.querySelector('.btn--roll');
 const btnHoldCurrent = document.querySelector('.btn--hold');
 
-// create an array of 6 dice images and save it in the dicePix variable
-let dicePix = new Array(
-  'dice-1.png',
-  'dice-2.png',
-  'dice-3.png',
-  'dice-4.png',
-  'dice-5.png',
-  'dice-6.png'
-);
+// display scores as 0 when first starting the game
+scoreP0Element.textContent = 0;
+scoreP1Element.textContent = 0;
 
-// how to create a random number between 1 to 6
-// let randomNumber = Math.trunc(Math.random() * 6 + 1);
+// hide the dice at start of the game
+diceElement.classList.add('hidden');
 
-// not sure about this:
-const btns = document.querySelectorAll('.btn');
-const playerActive = document.querySelector('player--active');
+// store the scores of both players in an array (starts with 0 points for both players)
+const scores = [0, 0];
 
-// const clickBtns = function () {
-//   console.log('Button clicked!');
-// };
+// set current Score at start
+let currentScore = 0;
 
-// // use for loop to select multiple elements in the same class e.g. btn class
-// for (let i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener('click', clickBtns);
-// }
+// set active player to player 0 at start
+let activePlayer = 0;
 
-const btnNew = function () {
-  console.log('Button clicked!');
-};
+// create a function that "rolls" the dice and generate a random number
+btnRollDice.addEventListener('click', function () {
+  // 1. Generating a random dice roll
+  const dice = Math.trunc(Math.random() * 6 + 1);
+  console.log(dice);
 
-// create a function that rolls the dice randomly
-const btnRoll = function () {
-  console.log('Button clicked!');
+  // 2. Display dice
+  // first, remove the hidden class and make the dice visible
+  diceElement.classList.remove('hidden');
+  // second, select the src in html and dynamically change the dice number picture according to the random number generated e.g. dice-1.png
+  diceElement.src = `dice-${dice}.png`;
 
-  // how to generate a random number depending on the length of variable dicePix array
-  let randomNumber = Math.trunc(Math.random() * dicePix.length);
-  console.log(randomNumber);
-  document.querySelector('.dice').src = dicePix[randomNumber];
-};
-
-const btnHold = function () {
-  console.log('Button clicked!');
-};
-
-btnNewGame.addEventListener('click', btnNew);
-btnRollDice.addEventListener('click', btnRoll);
-btnHoldCurrent.addEventListener('click', btnHold);
+  // 3. Check if dice != 1. If true, add the dice number to the current score. If false, reset current score to 0 and switch to next player
+  if (dice !== 1) {
+    // add dice to current score
+    currentScore += dice;
+    // select the score dynamically based on the active player / dynamicallly build id name and change the score
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore;
+  } else {
+    // select the active player and reset active player current score to 0
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    // then switch active player to next player and start the current score with 0 (here we use the ternary operator)
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    currentScore = 0;
+    // switch the active player under the html section class element. Toggle between player 0 and player 1. This changes the css styles for active player
+    P0Element.classList.toggle('player--active');
+    P1Element.classList.toggle('player--active');
+  }
+});
