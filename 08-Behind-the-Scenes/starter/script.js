@@ -183,4 +183,4 @@ iman.calcAge = Khairi.calcAge; // this is called method borrowing
 iman.calcAge();
 
 const f = Khairi.calcAge; // take the function and copy into 'f'
-// f(); //output: undefined -> because it is not attached to any object, just a regular function call
+// wsf(); //output: undefined -> because it is not attached to any object, just a regular function call
