@@ -54,7 +54,7 @@ calcAge(1985);
 // below will output referenceError because the variable age cannot be looked up/accessed
 // console.log(age);
 // printAge();
-*/
+
 
 // 95. Hoisting and TDZ-Temporal Dead Zone in Practice
 // Coded on 18.09.2022
@@ -184,3 +184,96 @@ iman.calcAge();
 
 const f = Khairi.calcAge; // take the function and copy into 'f'
 // wsf(); //output: undefined -> because it is not attached to any object, just a regular function call
+
+// 98. Regular functions vs Arrow functions
+// Coded on 23.09.2022
+
+const khairi = {
+  firstName: 'Ahmad Khairi',
+  year: '1985',
+  calcAge: function () {
+    console.log(this);
+    console.log(2022 - this.year);
+  },
+  greet: () => console.log(`Hey ${this.firstName}`),
+  // arrow function is replaced with a regular function:
+  // greet: function () {
+  //   console.log(`Hey ${this.firstName}`);
+  },
+};
+
+khairi.greet();
+console.log(this.firstName);
+
+// In the example above, the output is "Hey undefined"
+// Arrow function in this case does not get their own 'this' keyword
+// Arrow function this keyword belongs to the 'window object' thus undefined
+// Never use Arrow function as a method. Instead use regular function like below:
+// greet: function () {
+//   console.log(`Hey ${this.firstName}`);
+// }
+*/
+// Next pit-fall example is a function inside of a method
+const khairi = {
+  firstName: 'Ahmad Khairi',
+  year: '1985',
+  calcAge: function () {
+    // console.log(this);
+    console.log(2022 - this.year);
+
+    // Solution 2: Use arrow function
+    const isMilennial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    // Solution 1: Add a variable outside
+    // const self = this;
+    // // example of a function inside a method:
+    // const isMilennial = function () {
+    //   console.log(self); // self or that
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    //   // console.log(this);
+    //   // console.log(this.year >= 1981 && this.year <= 1996);
+    // };
+
+    isMilennial();
+  },
+
+  greet: () => {
+    console.log(this);
+    console.log(`Hey ${this.firstName}`);
+  },
+};
+
+khairi.greet();
+khairi.calcAge();
+
+// 'this' keyword in a regular function call (like the isMilennial() above) has the 'this' keyword set to undefined
+// This is why we get undefined
+// There are a few solutions to this problem.
+// First solution, declare a variable outside of the function to point to the 'this' keyword in the parent scope
+// const self = this;
+// const isMilennial = function () {
+//   console.log(self);
+//   console.log(self.year >= 1981 && self.year <= 1996);
+// }
+// The other solution is to use Arrow function
+// const isMilennial = () => {
+//   console.log(this);
+//   console.log(this.year >= 1981 && this.year <= 1996);
+// };
+
+// arguments keyword
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 3);
+addExpr(2, 3, 4, 5);
+
+// arguments keyword only exist in regular functions or function expression but not in arrow function like below
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 3);
