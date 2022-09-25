@@ -212,7 +212,7 @@ console.log(this.firstName);
 // greet: function () {
 //   console.log(`Hey ${this.firstName}`);
 // }
-*/
+
 // Next pit-fall example is a function inside of a method
 const khairi = {
   firstName: 'Ahmad Khairi',
@@ -277,3 +277,39 @@ var addArrow = (a, b) => {
   return a + b;
 };
 addArrow(2, 3);
+*/
+// 99. Primitives vs Objects (Primitive vs Reference types)
+// Coded on 25.09.2022
+
+// A scenario where there are primitive values:
+// Primitives are like numbers, strings, booleans, undefined, null, symbol, bigint, etc
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+// A scenario where there is an object/ reference values:
+// Objects are like object literal, arrays, functions, etc
+
+const me = {
+  name: 'Ahmad Khairi',
+  age: 30,
+};
+const friend = me;
+friend.age = 27;
+console.log('Friend', friend);
+console.log('Me', me); // Age also changed to 27. Why does it behave like this?
+// Explanation: When we declare a variable as an object, an identifier is created which points to a piece of memory (address) in the "Call Stack", which in turn points to a memory in the "Heap". That is where the object is stored. It works this way because maybe the object is too big to be stored in the "Call Stack". So instead they are stored in the "Heap".
+
+//  CALL STACK                                      HEAP
+//  --------------------------------------           -----------------------------------------------------
+// | Identifier       Address       Value |         | Address          Value                              |
+// |--------------------------------------|         |-----------------------------------------------------|
+// |  age             0001          30    |   |---->|  D30F          { name: 'Ahmad Khairi', age: 30*; }  |
+// |  oldAge           ↑            30    |   |     |                               *replaced with 27     |
+// |  age             0002          31    |   |     ------------------------------------------------------
+// |  me              0003          D30F  |   |
+// |  friend          ↑             ↑     |---|
+// ---------------------------------------
