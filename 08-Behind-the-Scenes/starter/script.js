@@ -307,9 +307,66 @@ console.log('Me', me); // Age also changed to 27. Why does it behave like this?
 //  --------------------------------------           -----------------------------------------------------
 // | Identifier       Address       Value |         | Address          Value                              |
 // |--------------------------------------|         |-----------------------------------------------------|
-// |  age             0001          30    |   |---->|  D30F          { name: 'Ahmad Khairi', age: 30*; }  |
+// |  age             0001          30    |   |---->|  D30F          { name: 'Ahmad Khairi', age: 30* }  |
 // |  oldAge           ↑            30    |   |     |                               *replaced with 27     |
 // |  age             0002          31    |   |     ------------------------------------------------------
 // |  me              0003          D30F  |   |
 // |  friend          ↑             ↑     |---|
 // ---------------------------------------
+
+// 100. Primitives vs Objects in practice
+
+// Primitives
+let lastName = 'Hamzah';
+let oldLastName = lastName;
+lastName = 'Haji Hamzah';
+console.log(lastName); // output 'Haji Hamzah'
+console.log(oldLastName); // output 'Hamzah'
+
+// Objects/ Reference values
+const iman = {
+  firstName: 'Iman Ezra Khayr',
+  lastName: 'Ahmad Khairi',
+  age: 5,
+};
+const marriedIman = iman;
+marriedIman.lastName = 'ahmadKhairi';
+console.log('Before marriage:', iman);
+console.log('After marriage:', marriedIman);
+
+//  CALL STACK                                                HEAP
+//  ----------------------------------------------           --------------------------------------------------------------------------------------
+// | Identifier       Address       Value         |         | Address          Value                                                              |
+// |----------------------------------------------|         |-------------------------------------------------------------------------------------|
+// |  lastName        0001          'Hamzah'      |   |---->|  D30F          { firstName: 'Iman Ezra Khayr', *lastName: 'Ahmad Khairi', age: 5 }  |
+// |  oldLastName      ↑             ↑            |   |     |                                                *reassigned with 'ahmadKhairi'       |
+// |  lastName        0002          'Haji Hamzah' |   |     |-------------------------------------------------------------------------------------
+// |  iman            0003          D30F          |   |
+// |  marriedIman      ↑             ↑            |---|
+// -----------------------------------------------
+
+// marriedIman = {}; // This does not work because the variable is a const
+
+// How to copy objects and reassign them with a new value
+const iman2 = {
+  firstName: 'Iman Ezra Khayr',
+  lastName: 'Ahmad Khairi',
+  age: 5,
+  maritalStatus: 'Single',
+  family: ['Daddy', 'Mommy'],
+};
+// To copy objects, use object.assign() method
+// The Object.assign() method copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object.
+// syntax: Object.assign(target, ...sources)
+const imanCopy = Object.assign({}, iman2);
+imanCopy.maritalStatus = 'Married';
+// console.log('Before marriage:', iman2);
+// console.log('After marriage:', imanCopy);
+
+// The problem with using object.assign() method is that it only created a shallow copy e.g. only copy the properties in the first level
+// For example below, we pushed new data into the 'family' array/list inside the imanCopy object
+imanCopy.family.push('Baby1');
+imanCopy.family.push('Baby2');
+// for both objects, family array/list have the same values even though we only pushed into the imanCopy object
+console.log('Before marriage:', iman2);
+console.log('After marriage:', imanCopy);
