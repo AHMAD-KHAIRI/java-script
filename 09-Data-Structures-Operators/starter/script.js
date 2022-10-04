@@ -12,10 +12,6 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
   openingHours: {
     thu: {
       open: 12,
@@ -30,16 +26,86 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  // orderDelivery: function (obj) {
+  // we can do destructuring right away like this
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]}
+      will be delivered to ${address} at ${time}`
+    );
+  },
 };
+
+// 104. Destructuring Objects
+// Coded on 04.10.2022
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Elaeis',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Elaeis',
+  starterIndex: 1,
+});
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+// destructuting objects are very useful especially dealing with the result from an api call like weather data which comes in the form of object
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+// dealing with third party objects can be useful to have default values for a case that we are trying to read a property that does not exist on the object
+// usually we get an undefined like below for menu object
+// const { menu, starterMenu: starters = [] } = restaurant;
+// when we assign default value to menu e.g. an empty array [], we will not get undefined
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// mutating variables while destructuring objects
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+
+// below we get syntax error because JS expects a code block after the curly brace
+// { a, b } = obj;
+// the trick is to wrap them in parentheses as destructuring assignment
+({ a, b } = obj);
+console.log(a, b);
+
+// nested objects
+const {
+  fri: { open: o, close: c },
+} = openingHours;
+// console.log(open, close);
+console.log(o, c);
 
 // 103. Desctructuring Arrays
 // Coded on 29.09.2022
 
 const arr = [2, 3, 4];
 //without using desctructuring:
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
 
 // with destructuring:
 const [x, y, z] = arr;
@@ -48,7 +114,7 @@ console.log(x, y, z);
 // const [first, second] = restaurant.categories;
 // console.log(first, second);
 
-// 2nd element in restaurant categories is skipped by "leaving a hole"
+// 2nd element in restaurant categories is skipped by "leaving a hole/ empty space": ", ,"
 const [first, , second] = restaurant.categories;
 console.log(first, second);
 
