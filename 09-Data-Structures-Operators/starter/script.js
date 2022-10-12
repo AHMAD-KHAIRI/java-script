@@ -148,3 +148,67 @@ console.log(i, j, k);
 // Using default values in destructuring
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+
+// 107. Short circuiting (&& and ||)
+// Logical operators can use ANY data type, return ANY data type, short-circuiting/short-circuit evaluation
+// Short-circuting with OR logical operator means if the first value is a truthy value, it will immediately return the first value
+// Example below:
+console.log('---- OR ----');
+console.log(3 || 'khairi'); // outputs 3 because it is a truthy value
+// Other examples:
+console.log('' || 'khairi'); // outputs khairi because '' is a falsy value
+console.log(true || 0); // outputs true because it is a truthy value and 0 is a falsy value
+console.log(undefined || null); // outputs null because undefined is a falsy value
+console.log(
+  undefined || // falsy
+    0 || // falsy
+    '' || // falsy
+    'hello' || // first truthy value --> output
+    23 || // ignored
+    null // ignored
+);
+console.log(
+  undefined || // falsy
+    0 || // falsy
+    '' || // falsy
+    23 || // first truthy value --> output
+    'hello' || // ignored
+    null // ignored
+);
+
+// Practical application of short-circuiting
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+// Easier to use short circuiting than ternary operator like above to setting default values
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+console.log('---- AND ----');
+// Short-circuting with AND logical operator means if the first value is a falsy value, it will immediately return the first value
+console.log(0 && 'khairi');
+console.log(7 && 'khairi');
+
+console.log(
+  undefined && // first falsy value --> output
+    0 && // ignore
+    '' && // ignored
+    23 && // ignored
+    'hello' && // ignored
+    null // ignored
+);
+
+console.log(
+  23 && // truthy, move to next
+    'khairi' && // truthy, move to next
+    null && // first falsy value --> output
+    'hello' // ignored
+);
+
+// Practical Example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+// short-circuiting
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
