@@ -212,3 +212,13 @@ if (restaurant.orderPizza) {
 
 // short-circuiting
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+// 108. Nullish Coalescing Operator (??)
+// 14.10.2022
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guests, guestCorrect); //outputs 10 0
+// nullish operator operates on nullish value instead of falsy value like with OR operator
+// Nullish value: null and undefined (0 is not falsy value but instead a null)
