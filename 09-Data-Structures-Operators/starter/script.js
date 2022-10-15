@@ -220,5 +220,39 @@ restaurant.numGuests = 0;
 const guests = restaurant.numGuests || 10;
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log(guests, guestCorrect); //outputs 10 0
-// nullish operator operates on nullish value instead of falsy value like with OR operator
+// nullish operator operates on nullish value instead of truthy value like with OR operator
 // Nullish value: null and undefined (0 is not falsy value but instead a null)
+
+// 109. Logical Assignment Operators
+
+const rest1 = {
+  name: 'Capri',
+  // numGuests: 20,
+  numGuests: 0,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  owner: 'Ahmad Khairi',
+};
+
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+
+// with OR logical assignment operator:
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// with nullish coalescent assignment operator
+rest1.numGuests ??= 10;
+rest2.numGuests ??= 10;
+
+// with AND logical assignment operator:
+// rest1.owner = rest1.owner && '<ANONYMOUS>';
+// rest2.owner = rest2.owner && '<ANONYMOUS>';
+
+rest1.owner &&= '<ANONYMOUS>';
+rest2.owner &&= '<ANONYMOUS>';
+
+console.log(rest1);
+console.log(rest2);
