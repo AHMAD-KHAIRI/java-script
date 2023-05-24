@@ -256,3 +256,15 @@ rest2.owner &&= '<ANONYMOUS>';
 
 console.log(rest1);
 console.log(rest2);
+
+// added on 24/5/2023 @ 11.50pm
+// 111. Looping arrays: The for-of loop
+/*
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const item of menu.entries())) {
+  console.log(`${item[0] +1}`: ${item[1]});
+}
+*/
