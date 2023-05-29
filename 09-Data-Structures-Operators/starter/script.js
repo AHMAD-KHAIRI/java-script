@@ -4,6 +4,31 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+openingHours = {
+  // also in ES6, we can compute (calculate) property names instead of to write them out manually & literally
+  [weekdays[3]]:
+    // thu:
+    {
+      open: 12,
+      close: 22,
+    },
+
+  [weekdays[4]]:
+    // fri:
+    {
+      open: 11,
+      close: 23,
+    },
+  [`day-${2 + 4}`]:
+    // sat:
+    {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+};
+
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -12,24 +37,33 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  // In ES6, enhanced object literals, like this:
+  openingHours,
 
-  order: function (starterIndex, mainIndex) {
+  // commented out. refer above for enhanced object literals
+  // openingHours: {
+  //   thu: {
+  //     open: 12,
+  //     close: 22,
+  //   },
+  //   fri: {
+  //     open: 11,
+  //     close: 23,
+  //   },
+  //   sat: {
+  //     open: 0, // Open 24 hours
+  //     close: 24,
+  //   },
+  // },
+
+  // In ES6, we no longer have to create a property and then set it to a function expression, like this:
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+  // this is how we normally create a property with a function expression but with ES6 refer above:
+  // order: function (starterIndex, mainIndex) {
+  //   return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  // },
 
   // orderDelivery: function (obj) {
   // we can do destructuring right away like this
@@ -268,3 +302,7 @@ for (const item of menu.entries())) {
   console.log(`${item[0] +1}`: ${item[1]});
 }
 */
+
+// added on 30/5/2023 @ 12am
+// 112.Enhanced Object Literas
+// refer to lines 10, 40 and 59
